@@ -26,8 +26,24 @@ function Hero() {
                 J'aime créer des projets concrets, apprendre de nouveaux langages et partager mes réalisations.
             </p>
             <button>Voir mes projets</button>
-
         </div>
+
+         <a
+        href="#contact"
+        style={{
+          display: "inline-block",
+          marginTop: "20px",
+          padding: "10px 20px",
+          backgroundColor: "#4f46e5",
+          color: "#fff",
+          textDecoration: "none",
+          borderRadius: "5px",
+          cursor: "pointer",
+        }}
+      >
+        Me contacter
+      </a>
+      
     </section>
   );
 }
