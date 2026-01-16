@@ -25,7 +25,6 @@ function Hero() {
                 Étudiante en informatique, je découvre et explore le monde de la programmation et du développement web. 
                 J'aime créer des projets concrets, apprendre de nouveaux langages et partager mes réalisations.
             </p>
-            <button>Voir mes projets</button>
         </div>
 
          <a
@@ -43,7 +42,7 @@ function Hero() {
       >
         Me contacter
       </a>
-      
+
     </section>
   );
 }
