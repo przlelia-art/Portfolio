@@ -4,13 +4,11 @@ import Contact from "./components/Contact";
 
 function App() {
   return (
-    <div>
-        <Hero />
-        <Contact />
-    </div>
+    <>
+      <Hero />
+      <Contact />
+    </>
   );
 }
 
 export default App;
-
-

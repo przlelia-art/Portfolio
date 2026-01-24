@@ -4,15 +4,16 @@ import MyPhoto from "../assets/photo_intra.jpg";
 function Hero() {
   const styles = {
     heroSection: {
-      width: "100%", // Prend toute la largeur
-      minHeight: "100vh", // Prend toute la hauteur de l'écran
+      width: "100%",
+      height: "100vh", // Hauteur fixe de 100% de l'écran
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
       padding: "80px 2rem",
       background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
       position: "relative",
-      margin: 0, // Pas de marge
+      margin: 0,
+      boxSizing: "border-box",
     },
     
     heroContent: {
@@ -128,17 +129,6 @@ function Hero() {
   return (
     <>
       <style>{`
-        * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-        }
-        
-        body {
-          margin: 0;
-          padding: 0;
-        }
-        
         @keyframes fadeInUp {
           from {
             opacity: 0;
