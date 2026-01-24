@@ -5,7 +5,7 @@ function Hero() {
   const styles = {
     heroSection: {
       width: "100%",
-      height: "100vh", // Hauteur fixe de 100% de l'écran
+      height: "100vh",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
@@ -188,11 +188,10 @@ function Hero() {
               href="#contact" 
               style={{
                 ...styles.btnBase,
-                ...styles.btnPrimary,
+                ...styles.btnSecondary,
                 transform: btn1Hover ? "translateY(-2px)" : "translateY(0)",
-                boxShadow: btn1Hover 
-                  ? "0 6px 20px rgba(0, 0, 0, 0.3)" 
-                  : "0 4px 15px rgba(0, 0, 0, 0.2)",
+                backgroundColor: btn1Hover ? "white" : "transparent",
+                color: btn1Hover ? "#667eea" : "white",
               }}
               onMouseEnter={() => setBtn1Hover(true)}
               onMouseLeave={() => setBtn1Hover(false)}
@@ -203,10 +202,11 @@ function Hero() {
               href="#projects" 
               style={{
                 ...styles.btnBase,
-                ...styles.btnSecondary,
+                ...styles.btnPrimary,
                 transform: btn2Hover ? "translateY(-2px)" : "translateY(0)",
-                backgroundColor: btn2Hover ? "white" : "transparent",
-                color: btn2Hover ? "#667eea" : "white",
+                boxShadow: btn2Hover 
+                  ? "0 6px 20px rgba(0, 0, 0, 0.3)" 
+                  : "0 4px 15px rgba(0, 0, 0, 0.2)",
               }}
               onMouseEnter={() => setBtn2Hover(true)}
               onMouseLeave={() => setBtn2Hover(false)}
