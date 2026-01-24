@@ -202,11 +202,10 @@ function Hero() {
               href="#projects" 
               style={{
                 ...styles.btnBase,
-                ...styles.btnPrimary,
+                ...styles.btnSecondary,
                 transform: btn2Hover ? "translateY(-2px)" : "translateY(0)",
-                boxShadow: btn2Hover 
-                  ? "0 6px 20px rgba(0, 0, 0, 0.3)" 
-                  : "0 4px 15px rgba(0, 0, 0, 0.2)",
+                backgroundColor: btn2Hover ? "white" : "transparent",
+                color: btn2Hover ? "#667eea" : "white",
               }}
               onMouseEnter={() => setBtn2Hover(true)}
               onMouseLeave={() => setBtn2Hover(false)}
