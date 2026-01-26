@@ -15,7 +15,7 @@ function Contact() {
       <h2>Contactez-moi</h2>
       <p>Vous pouvez me contacter par email ou via le formulaire ci-dessous.</p>
 
-      <p>Email : <a href="mailto:perez_l@etna-alternance.net" style={{ color: "#667eea" }}>perez_l@etna-alternance.net</a></p>
+      <p>Email : <a href="mailto:perez_l@etna-alternance.net" style={{ color: "white", textDecoration: "underline" }}>perez_l@etna-alternance.net</a></p>
       <p>Téléphone : 07 78 76 31 54</p>
 
       <form style={{ display: "flex", flexDirection: "column", gap: "10px", maxWidth: "400px", margin: "20px auto" }}>
