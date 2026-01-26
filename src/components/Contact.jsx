@@ -1,5 +1,4 @@
 import React from "react";
-
 function Contact() {
   return (
     <section 
@@ -7,7 +6,7 @@ function Contact() {
       style={{ 
         padding: "50px 20px", 
         textAlign: "center",
-        backgroundColor: "#1a1a1a",
+        background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
         color: "white",
         minHeight: "100vh",
         width: "100%",
