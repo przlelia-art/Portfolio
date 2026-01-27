@@ -84,13 +84,13 @@ function Skills() {
       id: 1,
       category: "💻 Langages",
       icon: "💻",
-      skills: ["JavaScript", "Python", "C++", "HTML/CSS", "SQL"]
+      skills: ["JavaScript", "Python", "C", "HTML/CSS"]
     },
     {
       id: 2,
       category: "⚛️ Frameworks & Librairies",
       icon: "⚛️",
-      skills: ["React", "React Native", "Node.js", "Express", "Vite"]
+      skills: ["React", "React Native", "Node.js", "Vite"]
     },
     {
       id: 3,
@@ -108,7 +108,7 @@ function Skills() {
       id: 5,
       category: "🌐 Web & API",
       icon: "🌐",
-      skills: ["API REST", "CRUD", "Documentation API", "TMDB API"]
+      skills: ["API REST", "CRUD", "Documentation API"]
     },
     {
       id: 6,
