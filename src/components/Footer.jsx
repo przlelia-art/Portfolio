@@ -5,15 +5,15 @@ function Footer() {
     footer: {
       width: "100%",
       padding: "2rem",
-      backgroundColor: "#f8f9fa",
-      color: "#1a1a1a",
+      background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)", // Même gradient que Skills
+      color: "white",
       textAlign: "center",
     },
     
     text: {
       margin: 0,
       fontSize: "0.9rem",
-      color: "#666",
+      color: "rgba(255, 255, 255, 0.9)",
     },
   };
 
