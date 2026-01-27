@@ -31,7 +31,6 @@ function Hero() {
       position: "absolute",
       borderRadius: "50%",
       background: "rgba(255, 255, 255, 0.1)",
-      animation: "float 15s infinite ease-in-out",
     },
     
     heroContent: {
@@ -169,13 +168,12 @@ function Hero() {
   const [githubHover, setGithubHover] = React.useState(false);
   const [linkedinHover, setLinkedinHover] = React.useState(false);
 
-  // Génération des particules
+  // Génération des particules fixes
   const particles = Array.from({ length: 20 }, (_, i) => ({
     id: i,
     size: Math.random() * 100 + 50,
     left: `${Math.random() * 100}%`,
     top: `${Math.random() * 100}%`,
-    delay: Math.random() * 10,
   }));
 
   const scrollToProjects = () => {
@@ -196,18 +194,6 @@ function Hero() {
           to {
             opacity: 1;
             transform: translateY(0);
-          }
-        }
-        
-        @keyframes float {
-          0%, 100% {
-            transform: translateY(0) translateX(0);
-          }
-          33% {
-            transform: translateY(-30px) translateX(20px);
-          }
-          66% {
-            transform: translateY(-15px) translateX(-20px);
           }
         }
         
@@ -238,7 +224,7 @@ function Hero() {
       `}</style>
 
       <section id="hero" style={styles.heroSection}>
-        {/* Particules animées */}
+        {/* Particules fixes */}
         <div style={styles.particles}>
           {particles.map((particle) => (
             <div
@@ -249,7 +235,6 @@ function Hero() {
                 height: `${particle.size}px`,
                 left: particle.left,
                 top: particle.top,
-                animationDelay: `${particle.delay}s`,
               }}
             />
           ))}
