@@ -123,6 +123,7 @@ function Hero() {
   const [photoHover, setPhotoHover] = React.useState(false);
   const [btn1Hover, setBtn1Hover] = React.useState(false);
   const [btn2Hover, setBtn2Hover] = React.useState(false);
+  const [btn3Hover, setBtn3Hover] = React.useState(false);
   const [githubHover, setGithubHover] = React.useState(false);
   const [linkedinHover, setLinkedinHover] = React.useState(false);
 
@@ -211,6 +212,20 @@ function Hero() {
               onMouseLeave={() => setBtn2Hover(false)}
             >
               Voir mes projets
+            </a>
+            <a 
+              href="#skills" 
+              style={{
+                ...styles.btnBase,
+                ...styles.btnSecondary,
+                transform: btn3Hover ? "translateY(-2px)" : "translateY(0)",
+                backgroundColor: btn3Hover ? "white" : "transparent",
+                color: btn3Hover ? "#667eea" : "white",
+              }}
+              onMouseEnter={() => setBtn3Hover(true)}
+              onMouseLeave={() => setBtn3Hover(false)}
+            >
+              Mes compétences
             </a>
           </div>
 
