@@ -106,14 +106,14 @@ function Projects() {
         id: 2,
             title: "User Management API",
             description: "API CRUD complète pour la gestion des utilisateurs avec MariaDB. Documentation interactive avec Swagger UI pour faciliter les tests et l'exploitation des endpoints par toute l'équipe.",
-            technologies: ["Node.js", "Express", "MariaDB", "Swagger"],
+            technologies: ["Node.js", "MariaDB", "Swagger"],
             githubLink: "https://github.com/przlelia-art/Doc-protocolaire",
     },
     {
         id: 3,
             title: "MyMovieApp",
             description: "Application mobile cross-plateforme (iOS et Android) permettant d'explorer un catalogue de films, rechercher des titres et visualiser des détails complets via l'API TMDB. Interface responsive avec navigation multi-écrans fluide.",
-            technologies: ["React Native", "Expo", "API TMDB", "JavaScript"],
+            technologies: ["React Native", "Expo", "JavaScript"],
             githubLink: "https://github.com/przlelia-art/EtnaFlix",
     },
     {
