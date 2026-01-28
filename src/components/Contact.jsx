@@ -50,7 +50,7 @@ function Contact() {
       <p style={{ color: "#666" }}>Vous pouvez me contacter par email ou via le formulaire ci-dessous.</p>
 
       <p style={{ color: "#666" }}>
-        Email : <a href="mailto:przlelia@gmail.com" style={{ color: "#667eea", textDecoration: "underline" }}>perez_l@etna-alternance.net</a>
+        Email : <a href="mailto:przlelia@gmail.com" style={{ color: "#667eea", textDecoration: "underline" }}>przlelia@gmail.com</a>
       </p>
       <p style={{ color: "#666" }}>Téléphone : 07 78 76 31 54</p>
 
