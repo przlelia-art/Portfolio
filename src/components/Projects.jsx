@@ -122,23 +122,23 @@ function Projects() {
             description: "Système de monitoring Arduino pour surveiller en temps réel la température et l'humidité ambiante avec capteur DHT11. Interface visuelle complète avec indicateurs LED et affichage LCD I2C.",
             technologies: ["Arduino", "C", "DHT11", "LCD I2C"],
             githubLink: "https://github.com/przlelia-art/Arduino",
-  },
+    },
 
-  {
+    {
         id: 5,
             title: "F1 Data Analysis",
             description: "Analyse de données de Formule 1 avec Python. Comparaison des performances de Verstappen et Leclerc sur le GP de Bahreïn 2024 : temps au tour, stratégies pneus et télémétrie en qualifications.",
             technologies: ["Python", "FastF1", "Pandas", "Matplotlib", "Seaborn"],
             githubLink: "https://github.com/przlelia-art/f1-data-analysis",
-  },
+    },
 
-  {
-    id: 6,
-    title: "COBOL Learning",
-    description: "Apprentissage du langage COBOL en dehors des cours par curiosité personnelle. Exercices couvrant les bases du langage, les boucles, les calculs, les tables et la gestion de fichiers.",
-    technologies: ["COBOL"],
-    githubLink: "https://github.com/przlelia-art/cobol-learning",
-},
+    {
+        id: 6,
+            title: "COBOL Learning",
+            description: "Apprentissage du langage COBOL en dehors des cours par curiosité personnelle. Exercices couvrant les bases du langage, les boucles, les calculs, les tables et la gestion de fichiers.",
+            technologies: ["COBOL"],
+            githubLink: "https://github.com/przlelia-art/cobol-learning",
+    },
 
   ];
 
