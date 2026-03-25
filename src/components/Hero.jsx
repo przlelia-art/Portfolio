@@ -263,9 +263,9 @@ function Hero() {
           </h1>
           
           <p className="hero-description" style={styles.heroDescription}>
-            Étudiante en informatique passionnée par le développement web. 
-            Je transforme des idées en projets concrets et j'explore sans cesse 
-            de nouvelles technologies.
+              Étudiante en informatique passionnée par le développement web et la data analyse. 
+              Passionnée de Formule 1, j'explore la data à travers l'analyse de données de course. 
+              Je transforme mes idées en projets concrets et j'explore sans cesse de nouvelles technologies.
           </p>
 
           <div style={styles.heroButtons}>
