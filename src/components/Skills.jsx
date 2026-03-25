@@ -84,13 +84,13 @@ function Skills() {
       id: 1,
       category: "💻 Langages",
       icon: "💻",
-      skills: ["JavaScript", "Python", "C", "HTML/CSS"]
+      skills: ["JavaScript", "Python", "C", "HTML/CSS", "COBOL"]
     },
     {
       id: 2,
       category: "⚛️ Frameworks & Librairies",
       icon: "⚛️",
-      skills: ["React", "React Native", "Node.js", "Vite"]
+      skills: ["React", "React Native", "Node.js", "Vite", "Pandas", "Matplotlib","Seaborn", "FastF1"]
     },
     {
       id: 3,
