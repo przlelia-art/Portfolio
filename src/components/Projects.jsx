@@ -132,6 +132,14 @@ function Projects() {
             githubLink: "https://github.com/przlelia-art/f1-data-analysis",
   },
 
+  {
+    id: 6,
+    title: "COBOL Learning",
+    description: "Apprentissage du langage COBOL en dehors des cours par curiosité personnelle. Exercices couvrant les bases du langage, les boucles, les calculs, les tables et la gestion de fichiers.",
+    technologies: ["COBOL"],
+    githubLink: "https://github.com/przlelia-art/cobol-learning",
+},
+
   ];
 
   return (
