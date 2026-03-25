@@ -123,6 +123,15 @@ function Projects() {
             technologies: ["Arduino", "C", "DHT11", "LCD I2C"],
             githubLink: "https://github.com/przlelia-art/Arduino",
   },
+
+  {
+        id: 5,
+            title: "F1 Data Analysis",
+            description: "Analyse de données de Formule 1 avec Python. Comparaison des performances de Verstappen et Leclerc sur le GP de Bahreïn 2024 : temps au tour, stratégies pneus et télémétrie en qualifications.",
+            technologies: ["Python", "FastF1", "Pandas", "Matplotlib", "Seaborn"],
+            githubLink: "https://github.com/przlelia-art/f1-data-analysis",
+  },
+
   ];
 
   return (
