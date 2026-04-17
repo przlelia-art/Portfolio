@@ -242,7 +242,7 @@ function Hero() {
         <div style={styles.heroContent}>
           <div style={styles.photoContainer}>
             <img
-              src="/photo_intra.jpg"
+              src="/assets/photo_intra.jpg"
               alt="Lélia Perez"
               className="profile-photo"
               style={{
