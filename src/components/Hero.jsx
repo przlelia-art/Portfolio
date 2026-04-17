@@ -1,5 +1,4 @@
 import React from "react";
-import MyPhoto from "../assets/photo_intra.jpg";
 
 function Hero() {
   const styles = {
