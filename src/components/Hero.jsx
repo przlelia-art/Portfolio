@@ -45,8 +45,8 @@ function Hero() {
     },
     
     profilePhoto: {
-      width: "200px",
-      height: "200px",
+      width: "250px",
+      height: "250px",
       borderRadius: "50%",
       objectFit: "cover",
       border: "5px solid rgba(255, 255, 255, 0.9)",
@@ -216,8 +216,8 @@ function Hero() {
             font-size: 1rem !important;
           }
           .profile-photo {
-            width: 150px !important;
-            height: 150px !important;
+            width: 180px !important;
+            height: 180px !important;
           }
         }
       `}</style>
