@@ -6,7 +6,7 @@ const techStack = [
   { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
   { name: "Docker",     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
   { name: "Arduino",    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" },
-  { name: "Go",         icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" },
+
   { name: "Git",        icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
   { name: "Figma",      icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
 ];
@@ -195,16 +195,16 @@ function Hero() {
           <div className="hero-content" style={{ flex: 1 }}>
             <h1
               className="hero-name"
-              style={{ fontSize: "52px", fontWeight: "700", color: "#ffffff", lineHeight: 1.1, marginBottom: "8px" }}
+              style={{ fontSize: "64px", fontWeight: "700", color: "#ffffff", lineHeight: 1.1, marginBottom: "10px" }}
             >
               Lélia Perez
             </h1>
 
-            <p style={{ fontSize: "18px", fontWeight: "400", color: "#8b5cf6", marginBottom: "20px", letterSpacing: "0.3px" }}>
+            <p style={{ fontSize: "22px", fontWeight: "400", color: "#8b5cf6", marginBottom: "20px", letterSpacing: "0.3px" }}>
               Développeuse Web &amp; Data
             </p>
 
-            <p style={{ fontSize: "14px", color: "rgba(255,255,255,0.5)", lineHeight: "1.75", maxWidth: "420px", marginBottom: "24px" }}>
+            <p style={{ fontSize: "16px", color: "rgba(255,255,255,0.5)", lineHeight: "1.75", maxWidth: "480px", marginBottom: "24px" }}>
               Étudiante en informatique à l'ETNA, passionnée par le développement web,
               la data analyse et la Formule 1. Je transforme des idées en projets concrets
               et explore sans cesse de nouvelles technologies.
