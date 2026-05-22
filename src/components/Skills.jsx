@@ -5,7 +5,7 @@ const skillsData = [
     id: 1,
     category: "Langages",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-    skills: ["JavaScript", "Python", "C", "HTML/CSS", "Go"],
+    skills: ["JavaScript", "Python", "C", "HTML/CSS", "Go", "Java", "Bash"],
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ const skillsData = [
     id: 3,
     category: "Bases de données",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
-    skills: ["MariaDB", "MySQL", "SQLite"],
+    skills: ["MariaDB", "MySQL", "SQLite", "SQL", "Modélisation BDD"],
   },
   {
     id: 4,
@@ -135,7 +135,7 @@ function Skills() {
             className="skills-grid"
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(2, 1fr)",
+              gridTemplateColumns: "repeat(3, 1fr)",
               gap: "24px",
             }}
           >
