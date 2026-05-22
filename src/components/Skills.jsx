@@ -56,7 +56,7 @@ function Skills() {
           background: rgba(255,255,255,0.03);
           border: 1px solid rgba(255,255,255,0.08);
           border-radius: 14px;
-          padding: 28px;
+          padding: 36px;
           transition: all 0.3s ease;
         }
 
@@ -69,12 +69,12 @@ function Skills() {
 
         .skill-badge {
           display: inline-block;
-          padding: 4px 12px;
+          padding: 6px 14px;
           background: rgba(255,255,255,0.05);
           border: 1px solid rgba(255,255,255,0.1);
           color: rgba(255,255,255,0.65);
           border-radius: 6px;
-          font-size: 12px;
+          font-size: 13px;
           font-weight: 500;
           transition: all 0.2s ease;
         }
@@ -135,8 +135,8 @@ function Skills() {
             className="skills-grid"
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(3, 1fr)",
-              gap: "20px",
+              gridTemplateColumns: "repeat(2, 1fr)",
+              gap: "24px",
             }}
           >
             {skillsData.map((cat) => (
@@ -148,14 +148,14 @@ function Skills() {
               >
                 {/* En-tête carte */}
                 <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "20px" }}>
-                  <img src={cat.icon} alt={cat.category} style={{ width: "22px", height: "22px", objectFit: "contain", opacity: 0.8 }} />
-                  <h3 style={{ fontSize: "15px", fontWeight: "600", color: "rgba(255,255,255,0.9)" }}>
+                  <img src={cat.icon} alt={cat.category} style={{ width: "26px", height: "26px", objectFit: "contain", opacity: 0.8 }} />
+                  <h3 style={{ fontSize: "17px", fontWeight: "600", color: "rgba(255,255,255,0.9)" }}>
                     {cat.category}
                   </h3>
                 </div>
 
                 {/* Badges */}
-                <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
                   {cat.skills.map((skill, i) => (
                     <span key={i} className="skill-badge">{skill}</span>
                   ))}
