@@ -160,7 +160,6 @@ function Hero() {
         /* Cartes latérales */
         .side-card {
           position: absolute;
-          bottom: 90px;
           display: flex;
           align-items: center;
           gap: 12px;
@@ -172,8 +171,8 @@ function Hero() {
           z-index: 1;
           max-width: 200px;
         }
-        .side-card.left { left: 50px; }
-        .side-card.right { right: 50px; }
+        .side-card.left { left: 50px; bottom: 90px; }
+        .side-card.right { right: 50px; top: 90px; }
 
         .side-icon {
           width: 38px; height: 38px; border-radius: 50%; flex-shrink: 0;
