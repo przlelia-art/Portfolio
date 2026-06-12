@@ -189,17 +189,17 @@ function Hero() {
 
         .side-label {
           font-family: 'Space Grotesk', sans-serif;
-          font-size: 10px; font-weight: 700; letter-spacing: 2px;
+          font-size: 11px; font-weight: 700; letter-spacing: 2px;
           text-transform: uppercase; color: rgba(255,255,255,0.3);
           margin-bottom: 2px;
         }
         .side-title {
           font-family: 'Space Grotesk', sans-serif;
-          font-size: 14px; font-weight: 600; color: #fff;
+          font-size: 16px; font-weight: 600; color: #fff;
           margin-bottom: 3px;
         }
         .side-sub {
-          font-size: 11px; color: rgba(255,255,255,0.35); line-height: 1.4;
+          font-size: 13px; color: rgba(255,255,255,0.35); line-height: 1.4;
         }
 
         @media (max-width: 1100px) {
