@@ -1,12 +1,6 @@
 import React, { useState } from "react";
 
 function Hero() {
-  const [btn1Hover, setBtn1Hover] = useState(false);
-  const [btn2Hover, setBtn2Hover] = useState(false);
-  const [btn3Hover, setBtn3Hover] = useState(false);
-  const [githubHover, setGithubHover] = useState(false);
-  const [linkedinHover, setLinkedinHover] = useState(false);
-
   return (
     <>
       <style>{`
@@ -31,6 +25,10 @@ function Hero() {
         @keyframes wave {
           0%, 100% { transform: scaleY(0.4); opacity: 0.6; }
           50%       { transform: scaleY(1); opacity: 1; }
+        }
+
+        @keyframes trackFlow {
+          to { stroke-dashoffset: -200; }
         }
 
         .hero-main-content {
@@ -136,6 +134,20 @@ function Hero() {
           transform: translateY(-2px);
         }
 
+        .speedline {
+          position: absolute;
+          height: 2px;
+          border-radius: 2px;
+          filter: blur(1.5px);
+          opacity: 0.5;
+        }
+        .speedline.orange { background: linear-gradient(90deg, transparent, #ff5e3a, transparent); }
+        .speedline.cyan   { background: linear-gradient(90deg, transparent, #00d9ff, transparent); }
+
+        .track-line {
+          animation: trackFlow 6s linear infinite;
+        }
+
         @media (max-width: 768px) {
           .hero-name { font-size: 42px !important; }
           .hero-desc  { font-size: 14px !important; }
@@ -159,24 +171,36 @@ function Hero() {
       >
         {/* Halos */}
         <div style={{
-          position: "absolute", width: "500px", height: "500px", borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(255,94,58,0.12) 0%, transparent 70%)",
-          top: "-150px", left: "-100px", pointerEvents: "none",
+          position: "absolute", width: "600px", height: "600px", borderRadius: "50%",
+          background: "radial-gradient(circle, rgba(255,94,58,0.14) 0%, transparent 70%)",
+          top: "-180px", left: "-150px", pointerEvents: "none",
         }} />
         <div style={{
-          position: "absolute", width: "450px", height: "450px", borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(0,217,255,0.1) 0%, transparent 70%)",
-          bottom: "-120px", right: "-80px", pointerEvents: "none",
+          position: "absolute", width: "550px", height: "550px", borderRadius: "50%",
+          background: "radial-gradient(circle, rgba(0,217,255,0.12) 0%, transparent 70%)",
+          bottom: "-150px", right: "-120px", pointerEvents: "none",
         }} />
 
-        {/* Lignes de circuit en fond */}
+        {/* Speedlines */}
+        <div className="speedline orange" style={{ top: "18%", left: 0, width: "38%" }} />
+        <div className="speedline orange" style={{ top: "24%", left: 0, width: "22%" }} />
+        <div className="speedline cyan"   style={{ top: "32%", left: 0, width: "30%" }} />
+
+        <div className="speedline cyan"   style={{ top: "68%", right: 0, width: "36%" }} />
+        <div className="speedline orange" style={{ top: "76%", right: 0, width: "24%" }} />
+        <div className="speedline cyan"   style={{ top: "84%", right: 0, width: "30%" }} />
+
+        {/* Lignes de circuit animées en fond */}
         <svg
           viewBox="0 0 1000 600"
           preserveAspectRatio="none"
           style={{ position: "absolute", inset: 0, width: "100%", height: "100%", zIndex: 0, opacity: 0.5 }}
         >
-          <path d="M -50 500 Q 200 450, 350 500 T 700 480 Q 900 460, 1050 520" stroke="#ff5e3a" strokeWidth="1.5" fill="none" opacity="0.25" strokeDasharray="8 8" />
-          <path d="M -50 100 Q 250 60, 450 120 T 850 90 Q 1000 80, 1050 130" stroke="#00d9ff" strokeWidth="1.5" fill="none" opacity="0.2" strokeDasharray="8 8" />
+          <path className="track-line" d="M -50 480 Q 150 380, 350 460 T 700 420 Q 900 380, 1050 470" stroke="#ff5e3a" strokeWidth="1.5" fill="none" opacity="0.18" strokeDasharray="6 10" />
+          <path className="track-line" d="M -50 460 Q 180 400, 380 470 T 750 440 Q 950 410, 1050 480" stroke="#ff5e3a" strokeWidth="1" fill="none" opacity="0.1" strokeDasharray="4 8" />
+
+          <path className="track-line" d="M -50 120 Q 250 40, 480 130 T 850 80 Q 1000 60, 1050 140" stroke="#00d9ff" strokeWidth="1.5" fill="none" opacity="0.16" strokeDasharray="6 10" />
+          <path className="track-line" d="M -50 140 Q 280 70, 500 150 T 880 100 Q 1020 80, 1050 160" stroke="#00d9ff" strokeWidth="1" fill="none" opacity="0.1" strokeDasharray="4 8" />
         </svg>
 
         {/* Contenu */}
@@ -249,22 +273,13 @@ function Hero() {
 
           {/* Boutons */}
           <div className="hero-buttons" style={{ display: "flex", gap: "14px", flexWrap: "wrap", justifyContent: "center", marginBottom: "40px" }}>
-            <a
-              href="#contact"
-              className="btn-primary-hero"
-            >
+            <a href="#contact" className="btn-primary-hero">
               Me contacter
             </a>
-            <a
-              href="#projects"
-              className="btn-outline-hero"
-            >
+            <a href="#projects" className="btn-outline-hero">
               Voir mes projets
             </a>
-            <a
-              href="#skills"
-              className="btn-outline-hero"
-            >
+            <a href="#skills" className="btn-primary-hero">
               Compétences
             </a>
           </div>
