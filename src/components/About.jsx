@@ -69,18 +69,18 @@ function About() {
                 .about-timeline {
                     position: relative;
                     padding-left: 36px;
-                    margin-bottom: 110px;
+                    margin-bottom: 60px;
                 }
                 .about-timeline::before {
                     content: "";
-                    position: absolute; left: 9px; top: 6px; bottom: 56px;
+                    position: absolute; left: 9px; top: 13px; bottom: 22px;
                     width: 2px;
                     background: linear-gradient(180deg, #ff5e3a, #00d9ff);
                     opacity: 0.3;
                 }
                 .about-timeline-item {
                     position: relative;
-                    padding-bottom: 36px;
+                    padding-bottom: 28px;
                 }
                 .about-timeline-item:last-child { padding-bottom: 0; }
                 .about-timeline-dot {
@@ -183,7 +183,7 @@ function About() {
                     letterSpacing: "3px",
                     textTransform: "uppercase",
                     color: "rgba(255,255,255,0.25)",
-                    marginBottom: "14px",
+                    marginBottom: "30px",
                 }}
             >
                 À propos
@@ -222,7 +222,7 @@ function About() {
                     fontFamily: "'Space Grotesk', sans-serif",
                     fontSize: "28px",
                     fontWeight: "700",
-                    marginBottom: "40px",
+                    marginBottom: "30px",
                 }}
             >
                 Mon parcours
