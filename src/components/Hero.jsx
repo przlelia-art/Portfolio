@@ -163,21 +163,21 @@ function Hero() {
           display: flex;
           align-items: center;
           gap: 14px;
-          padding: 18px 22px;
+          padding: 22px 26px;
           background: rgba(255,255,255,0.03);
           border: 1px solid rgba(255,255,255,0.08);
-          border-radius: 14px;
+          border-radius: 16px;
           backdrop-filter: blur(8px);
           z-index: 1;
-          max-width: 260px;
+          max-width: 310px;
         }
         .side-card.left { left: 50px; bottom: 90px; }
         .side-card.right { right: 50px; top: 90px; }
 
         .side-icon {
-          width: 46px; height: 46px; border-radius: 50%; flex-shrink: 0;
+          width: 54px; height: 54px; border-radius: 50%; flex-shrink: 0;
           display: flex; align-items: center; justify-content: center;
-          font-size: 20px; position: relative;
+          font-size: 24px; position: relative;
         }
         .side-icon::before {
           content: "";
@@ -189,17 +189,17 @@ function Hero() {
 
         .side-label {
           font-family: 'Space Grotesk', sans-serif;
-          font-size: 11px; font-weight: 700; letter-spacing: 2px;
+          font-size: 12px; font-weight: 700; letter-spacing: 2px;
           text-transform: uppercase; color: rgba(255,255,255,0.3);
-          margin-bottom: 2px;
+          margin-bottom: 3px;
         }
         .side-title {
           font-family: 'Space Grotesk', sans-serif;
-          font-size: 16px; font-weight: 600; color: #fff;
-          margin-bottom: 3px;
+          font-size: 18px; font-weight: 600; color: #fff;
+          margin-bottom: 4px;
         }
         .side-sub {
-          font-size: 13px; color: rgba(255,255,255,0.35); line-height: 1.4;
+          font-size: 14px; color: rgba(255,255,255,0.35); line-height: 1.45;
         }
 
         @media (max-width: 1100px) {
@@ -283,7 +283,7 @@ function Hero() {
           }}
         >
           {/* Photo avec anneau */}
-          <div style={{ position: "relative", width: "180px", height: "180px", marginBottom: "24px" }}>
+          <div style={{ position: "relative", width: "210px", height: "210px", marginBottom: "24px" }}>
             <div className="photo-ring"></div>
             <div style={{
               width: "100%", height: "100%", borderRadius: "50%",
@@ -310,7 +310,7 @@ function Hero() {
             className="hero-name"
             style={{
               fontFamily: "'Space Grotesk', sans-serif",
-              fontSize: "68px", fontWeight: "700", color: "#fff",
+              fontSize: "78px", fontWeight: "700", color: "#fff",
               lineHeight: 1.05, marginBottom: "8px", letterSpacing: "-1px",
             }}
           >
@@ -320,7 +320,7 @@ function Hero() {
           {/* Rôle */}
           <p style={{
             fontFamily: "'Space Grotesk', sans-serif",
-            fontSize: "20px", fontWeight: "500",
+            fontSize: "23px", fontWeight: "500",
             color: "rgba(255,255,255,0.55)", marginBottom: "16px", letterSpacing: "0.5px",
           }}>
             Développeuse Web — toujours en mouvement
@@ -329,7 +329,7 @@ function Hero() {
           {/* Description */}
           <p
             className="hero-desc"
-            style={{ fontSize: "16px", color: "rgba(255,255,255,0.45)", lineHeight: "1.8", maxWidth: "500px", marginBottom: "28px" }}
+            style={{ fontSize: "18px", color: "rgba(255,255,255,0.45)", lineHeight: "1.8", maxWidth: "560px", marginBottom: "28px" }}
           >
             Étudiante en informatique à l'ETNA, passionnée par le développement web.
             Entre Formule 1, MotoGP, course à pied et danse, je transforme cette énergie
