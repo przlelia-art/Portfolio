@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 
 function Hero() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@300;400;500&display=swap');
 
         #hero * {
           box-sizing: border-box;
@@ -16,17 +16,14 @@ function Hero() {
           from { opacity: 0; transform: translateY(28px); }
           to   { opacity: 1; transform: translateY(0); }
         }
-
         @keyframes spin {
           from { transform: rotate(0deg); }
           to   { transform: rotate(360deg); }
         }
-
         @keyframes wave {
           0%, 100% { transform: scaleY(0.4); opacity: 0.6; }
           50%       { transform: scaleY(1); opacity: 1; }
         }
-
         @keyframes trackFlow {
           to { stroke-dashoffset: -200; }
         }
@@ -148,6 +145,68 @@ function Hero() {
           animation: trackFlow 6s linear infinite;
         }
 
+        /* Texte géant en filigrane */
+        .bg-word {
+          position: absolute;
+          font-family: 'Space Grotesk', sans-serif;
+          font-weight: 800;
+          font-size: 220px;
+          line-height: 1;
+          color: transparent;
+          -webkit-text-stroke: 1px rgba(255,255,255,0.05);
+          letter-spacing: 4px;
+          user-select: none;
+          z-index: 0;
+          white-space: nowrap;
+          pointer-events: none;
+        }
+        .bg-word.left {
+          top: 50%;
+          left: -90px;
+          transform: translateY(-50%) rotate(-90deg) translateX(-50%);
+          transform-origin: left center;
+        }
+        .bg-word.right {
+          top: 50%;
+          right: -90px;
+          transform: translateY(-50%) rotate(90deg) translateX(50%);
+          transform-origin: right center;
+        }
+
+        /* Cartes latérales */
+        .side-card {
+          position: absolute;
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
+          padding: 16px 20px;
+          background: rgba(255,255,255,0.03);
+          border: 1px solid rgba(255,255,255,0.08);
+          border-radius: 14px;
+          backdrop-filter: blur(8px);
+          z-index: 1;
+          max-width: 180px;
+        }
+        .side-card .icon { font-size: 22px; margin-bottom: 4px; }
+        .side-card .label {
+          font-family: 'Space Grotesk', sans-serif;
+          font-size: 10px; font-weight: 700; letter-spacing: 2px;
+          text-transform: uppercase; color: rgba(255,255,255,0.3);
+        }
+        .side-card .value {
+          font-family: 'Space Grotesk', sans-serif;
+          font-size: 15px; font-weight: 600; color: #fff;
+        }
+        .side-card .sub {
+          font-size: 12px; color: rgba(255,255,255,0.35); line-height: 1.5;
+        }
+        .side-card.orange-accent { border-color: rgba(255,94,58,0.2); }
+        .side-card.cyan-accent { border-color: rgba(0,217,255,0.2); }
+
+        @media (max-width: 1100px) {
+          .side-card, .bg-word { display: none; }
+        }
+
         @media (max-width: 768px) {
           .hero-name { font-size: 42px !important; }
           .hero-desc  { font-size: 14px !important; }
@@ -181,11 +240,14 @@ function Hero() {
           bottom: "-150px", right: "-120px", pointerEvents: "none",
         }} />
 
+        {/* Texte géant filigrane */}
+        <div className="bg-word left">DRIVE</div>
+        <div className="bg-word right">DANCE</div>
+
         {/* Speedlines */}
         <div className="speedline orange" style={{ top: "18%", left: 0, width: "38%" }} />
         <div className="speedline orange" style={{ top: "24%", left: 0, width: "22%" }} />
         <div className="speedline cyan"   style={{ top: "32%", left: 0, width: "30%" }} />
-
         <div className="speedline cyan"   style={{ top: "68%", right: 0, width: "36%" }} />
         <div className="speedline orange" style={{ top: "76%", right: 0, width: "24%" }} />
         <div className="speedline cyan"   style={{ top: "84%", right: 0, width: "30%" }} />
@@ -198,10 +260,24 @@ function Hero() {
         >
           <path className="track-line" d="M -50 480 Q 150 380, 350 460 T 700 420 Q 900 380, 1050 470" stroke="#ff5e3a" strokeWidth="1.5" fill="none" opacity="0.18" strokeDasharray="6 10" />
           <path className="track-line" d="M -50 460 Q 180 400, 380 470 T 750 440 Q 950 410, 1050 480" stroke="#ff5e3a" strokeWidth="1" fill="none" opacity="0.1" strokeDasharray="4 8" />
-
           <path className="track-line" d="M -50 120 Q 250 40, 480 130 T 850 80 Q 1000 60, 1050 140" stroke="#00d9ff" strokeWidth="1.5" fill="none" opacity="0.16" strokeDasharray="6 10" />
           <path className="track-line" d="M -50 140 Q 280 70, 500 150 T 880 100 Q 1020 80, 1050 160" stroke="#00d9ff" strokeWidth="1" fill="none" opacity="0.1" strokeDasharray="4 8" />
         </svg>
+
+        {/* Cartes latérales */}
+        <div className="side-card orange-accent" style={{ top: "50%", left: "50px", transform: "translateY(-50%)" }}>
+          <div className="icon">🏁</div>
+          <div className="label">En ce moment</div>
+          <div className="value">F1 & MotoGP</div>
+          <div className="sub">Passionnée de vitesse et de stratégie de course.</div>
+        </div>
+
+        <div className="side-card cyan-accent" style={{ top: "50%", right: "50px", transform: "translateY(-50%)" }}>
+          <div className="icon">🎯</div>
+          <div className="label">Objectif</div>
+          <div className="value">20 km — 10 oct.</div>
+          <div className="sub">Course solidaire, plan d'entraînement en cours.</div>
+        </div>
 
         {/* Contenu */}
         <div
