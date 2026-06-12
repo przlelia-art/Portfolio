@@ -69,22 +69,19 @@ function About() {
                 .about-timeline {
                     position: relative;
                     padding-left: 36px;
-                    margin-bottom: 90px;
+                    margin-bottom: 110px;
                 }
-
                 .about-timeline::before {
                     content: "";
-                    position: absolute; left: 9px; top: 6px; bottom: 6px;
+                    position: absolute; left: 9px; top: 6px; bottom: 56px;
                     width: 2px;
                     background: linear-gradient(180deg, #ff5e3a, #00d9ff);
                     opacity: 0.3;
                 }
-
                 .about-timeline-item {
                     position: relative;
                     padding-bottom: 36px;
                 }
-
                 .about-timeline-item:last-child { padding-bottom: 0; }
                 .about-timeline-dot {
                     position: absolute; left: -36px; top: 4px;
@@ -92,21 +89,18 @@ function About() {
                     background: #1a1a22;
                     border: 2px solid #ff5e3a;
                 }
-
                 .about-timeline-item:nth-child(even) .about-timeline-dot { border-color: #00d9ff; }
                 .about-timeline-year {
                     font-family: 'Space Grotesk', sans-serif;
                     font-size: 12px; font-weight: 700; letter-spacing: 2px;
                     color: rgba(255,255,255,0.3); text-transform: uppercase; margin-bottom: 4px;
-            }
-
+                }
                 .about-timeline-title {
                     font-family: 'Space Grotesk', sans-serif;
                     font-size: 17px; font-weight: 600; color: #fff; margin-bottom: 4px;
                 }
-
                 .about-timeline-desc {
-                    font-size: 14px; color: rgba(255,255,255,0.4); line-height: 1.6; max-width: 520px;
+                    -size: 14px; color: rgba(255,255,255,0.4); line-height: 1.6; max-width: 520px;
                 }
 
                 .passion-card {
@@ -116,18 +110,15 @@ function About() {
                     padding: 22px;
                     transition: all 0.3s ease;
                 }
-
                 .passion-card:hover {
                     border-color: rgba(255,94,58,0.25);
                     transform: translateY(-4px);
                 }
-
                 .passion-icon { font-size: 26px; margin-bottom: 10px; }
                 .passion-title {
                     font-family: 'Space Grotesk', sans-serif;
                     font-size: 16px; font-weight: 600; color: #fff; margin-bottom: 8px;
                 }
-
                 .passion-text {
                     font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.7;
                 }
@@ -136,7 +127,7 @@ function About() {
                     .about-title { font-size: 34px !important; }
                     .passion-grid { grid-template-columns: 1fr !important; }
                 }
-            `}</style>
+        `}</style>
 
         <section
             id="about"
@@ -148,52 +139,92 @@ function About() {
                 color: "#fff",
             }}
         >
-        {/* Halos */}
-        <div style={{
-            position: "absolute", width: "500px", height: "500px", borderRadius: "50%",
-            background: "radial-gradient(circle, rgba(255,94,58,0.1) 0%, transparent 70%)",
-            top: "-150px", left: "-150px", pointerEvents: "none",
-        }} />
-        <div style={{
-            position: "absolute", width: "500px", height: "500px", borderRadius: "50%",
-            background: "radial-gradient(circle, rgba(0,217,255,0.1) 0%, transparent 70%)",
-            bottom: "-150px", right: "-150px", pointerEvents: "none",
-        }} />
+            {/* Halos */}
+            <div
+                style={{
+                    position: "absolute",
+                    width: "500px",
+                    height: "500px",
+                    borderRadius: "50%",
+                    background:
+                    "radial-gradient(circle, rgba(255,94,58,0.1) 0%, transparent 70%)",
+                    top: "-150px",
+                    left: "-150px",
+                    pointerEvents: "none",
+                }}
+            />
+            <div
+                style={{
+                    position: "absolute",
+                    width: "500px",
+                    height: "500px",
+                    borderRadius: "50%",
+                    background:
+                    "radial-gradient(circle, rgba(0,217,255,0.1) 0%, transparent 70%)",
+                    bottom: "-150px",
+                    right: "-150px",
+                    pointerEvents: "none",
+                }}
+            />
 
-        <div style={{ maxWidth: "1000px", margin: "0 auto", position: "relative", zIndex: 1 }}>
-
+            <div
+                style={{
+                    maxWidth: "1000px",
+                    margin: "0 auto",
+                    position: "relative",
+                    zIndex: 1,
+                }}
+            >
             {/* BIO */}
-            <p style={{
-                fontFamily: "'Space Grotesk', sans-serif",
-                fontSize: "12px", letterSpacing: "3px", textTransform: "uppercase",
-                color: "rgba(255,255,255,0.25)", marginBottom: "14px",
-            }}>
+            <p
+                style={{
+                    fontFamily: "'Space Grotesk', sans-serif",
+                    fontSize: "12px",
+                    letterSpacing: "3px",
+                    textTransform: "uppercase",
+                    color: "rgba(255,255,255,0.25)",
+                    marginBottom: "14px",
+                }}
+            >
                 À propos
             </p>
             <h1
                 className="about-title"
                 style={{
                     fontFamily: "'Space Grotesk', sans-serif",
-                    fontSize: "44px", fontWeight: "700", marginBottom: "20px", letterSpacing: "-1px",
+                    fontSize: "44px",
+                    fontWeight: "700",
+                    marginBottom: "20px",
+                    letterSpacing: "-1px",
                 }}
             >
-            Toujours en <span>mouvement</span>
+                Toujours en <span>mouvement</span>
             </h1>
-                <p style={{
-                    fontSize: "16px", color: "rgba(255,255,255,0.5)", lineHeight: "1.8",
-                    maxWidth: "680px", marginBottom: "80px",
-                }}>
-                    Étudiante en informatique à l'ETNA, je suis passionnée par le développement web.
-                    Entre Formule 1, MotoGP, course à pied et danse, je transforme cette énergie
-                    en projets concrets et j'explore sans cesse de nouvelles technologies.
-                    Mon parcours n'a pas toujours été tout droit — et c'est peut-être ça qui me rend curieuse.
-                </p>
+            <p
+                style={{
+                    fontSize: "16px",
+                    color: "rgba(255,255,255,0.5)",
+                    lineHeight: "1.8",
+                    maxWidth: "680px",
+                    marginBottom: "50px",
+                }}
+            >
+                Étudiante en informatique à l'ETNA, je suis passionnée par le
+                développement web. Entre Formule 1, MotoGP, course à pied et danse,
+                je transforme cette énergie en projets concrets et j'explore sans
+                cesse de nouvelles technologies. Mon parcours n'a pas toujours été
+                tout droit — et c'est peut-être ça qui me rend curieuse.
+            </p>
 
             {/* TIMELINE */}
-            <h2 style={{
-                fontFamily: "'Space Grotesk', sans-serif",
-                fontSize: "28px", fontWeight: "700", marginBottom: "40px",
-            }}>
+            <h2
+                style={{
+                    fontFamily: "'Space Grotesk', sans-serif",
+                    fontSize: "28px",
+                    fontWeight: "700",
+                    marginBottom: "40px",
+                }}
+            >
                 Mon parcours
             </h2>
 
@@ -205,20 +236,28 @@ function About() {
                     <div className="about-timeline-title">{item.title}</div>
                     <div className="about-timeline-desc">{item.desc}</div>
                 </div>
-            ))}
+                ))}
             </div>
 
             {/* PASSIONS x DEV */}
-            <h2 style={{
-                fontFamily: "'Space Grotesk', sans-serif",
-                fontSize: "28px", fontWeight: "700", marginBottom: "40px",
-            }}>
+            <h2
+                style={{
+                    fontFamily: "'Space Grotesk', sans-serif",
+                    fontSize: "28px",
+                    fontWeight: "700",
+                    marginBottom: "40px",
+                }}
+            >
                 Mes passions, ma façon de coder
             </h2>
 
             <div
                 className="passion-grid"
-                style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "18px" }}
+                style={{
+                    display: "grid",
+                    gridTemplateColumns: "repeat(2, 1fr)",
+                    gap: "18px",
+                }}
             >
                 {passionsData.map((p, i) => (
                 <div className="passion-card" key={i}>
@@ -228,7 +267,6 @@ function About() {
                 </div>
                 ))}
             </div>
-
             </div>
         </section>
     </>
