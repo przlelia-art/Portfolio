@@ -326,16 +326,6 @@ function Hero() {
             Développeuse Web — toujours en mouvement
           </p>
 
-          {/* Description */}
-          <p
-            className="hero-desc"
-            style={{ fontSize: "18px", color: "rgba(255,255,255,0.45)", lineHeight: "1.8", maxWidth: "560px", marginBottom: "28px" }}
-          >
-            Étudiante en informatique à l'ETNA, passionnée par le développement web.
-            Entre Formule 1, MotoGP, course à pied et danse, je transforme cette énergie
-            en projets concrets et j'explore sans cesse de nouvelles technologies.
-          </p>
-
           {/* Boutons */}
           <div className="hero-buttons" style={{ display: "flex", gap: "14px", flexWrap: "wrap", justifyContent: "center", marginBottom: "30px" }}>
             <a href="#contact" className="btn-primary-hero">
