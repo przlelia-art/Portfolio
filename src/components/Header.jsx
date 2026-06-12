@@ -24,6 +24,7 @@ function Header() {
 
   const navItems = [
     { id: "hero",     label: "Accueil" },
+    { id: "about",    label: "À propos" },
     { id: "projects", label: "Projets" },
     { id: "skills",   label: "Compétences" },
     { id: "contact",  label: "Contact" },
