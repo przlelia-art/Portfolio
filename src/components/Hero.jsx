@@ -24,14 +24,12 @@ function Hero() {
           0%, 100% { transform: scaleY(0.4); opacity: 0.6; }
           50%       { transform: scaleY(1); opacity: 1; }
         }
-        @keyframes trackFlow {
-          to { stroke-dashoffset: -40; }
+        @keyframes travel {
+          to { stroke-dashoffset: -2400; }
         }
 
         .hero-main-content {
           animation: fadeInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
-          position: relative;
-          z-index: 10;
         }
 
         .photo-ring {
@@ -72,10 +70,10 @@ function Hero() {
           background: linear-gradient(90deg, #ff5e3a, #ff8a3a);
           color: #0a0a0c;
           border: none;
-          padding: 13px 30px;
+          padding: 12px 26px;
           border-radius: 8px;
           font-family: 'Space Grotesk', sans-serif;
-          font-size: 14px;
+          font-size: 13px;
           font-weight: 600;
           cursor: pointer;
           transition: all 0.25s ease;
@@ -92,10 +90,10 @@ function Hero() {
           background: transparent;
           color: rgba(255,255,255,0.7);
           border: 1.5px solid rgba(255,255,255,0.15);
-          padding: 13px 30px;
+          padding: 12px 26px;
           border-radius: 8px;
           font-family: 'Space Grotesk', sans-serif;
-          font-size: 14px;
+          font-size: 13px;
           font-weight: 600;
           cursor: pointer;
           transition: all 0.25s ease;
@@ -121,7 +119,7 @@ function Hero() {
           background: rgba(255,255,255,0.04);
           border: 1px solid rgba(255,255,255,0.1);
           color: rgba(255,255,255,0.5);
-          padding: 9px 18px; border-radius: 8px;
+          padding: 8px 16px; border-radius: 8px;
           font-family: 'Space Grotesk', sans-serif;
           font-size: 12px; font-weight: 600;
           text-decoration: none; transition: all 0.2s ease;
@@ -133,124 +131,30 @@ function Hero() {
           transform: translateY(-2px);
         }
 
-        .speedline {
-          position: absolute;
-          height: 2px;
-          border-radius: 2px;
-          filter: blur(1px);
-          opacity: 0.3;
-          pointer-events: none;
-          z-index: 1;
-        }
-        .speedline.orange { background: linear-gradient(90deg, #ff5e3a, transparent); }
-        .speedline.cyan   { background: linear-gradient(270deg, #00d9ff, transparent); }
+        /* Circuits */
+        .circuit-base-orange { fill: none; stroke: #ff5e3a; stroke-width: 1.5; opacity: 0.16; }
+        .circuit-base-cyan   { fill: none; stroke: #00d9ff; stroke-width: 1.5; opacity: 0.16; }
 
-        .circuit-track {
-          stroke-dasharray: 8 8;
-          animation: trackFlow 4s linear infinite;
+        .circuit-light-orange {
+          fill: none; stroke: #ff8a65; stroke-width: 2.5; stroke-linecap: round;
+          stroke-dasharray: 60 2340;
+          opacity: 0.9;
+          animation: travel 10s linear infinite;
+          filter: drop-shadow(0 0 6px rgba(255,94,58,0.8));
         }
-
-        /* --- TEXTES GÉANTS EN ARRIÈRE-PLAN BIEN CADRÉS --- */
-        .bg-word-container {
-          position: absolute;
-          inset: 0;
-          width: 100%;
-          height: 100%;
-          overflow: hidden;
-          pointer-events: none;
-          z-index: 1;
-        }
-
-        .bg-word {
-          position: absolute;
-          font-family: 'Space Grotesk', sans-serif;
-          font-weight: 900;
-          font-size: 150px;
-          color: transparent;
-          -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.03);
-          letter-spacing: 8px;
-          user-select: none;
-          top: 50%;
-        }
-        
-        .bg-word.left {
-          left: -40px;
-          transform: translateY(-50%) rotate(-90deg);
-        }
-        
-        .bg-word.right {
-          right: -60px;
-          transform: translateY(-50%) rotate(90deg);
-        }
-
-        /* --- CARTES LATÉRALES ADAPTATIVES --- */
-        .side-card {
-          position: absolute;
-          display: flex;
-          flex-direction: column;
-          gap: 6px;
-          padding: 20px;
-          background: rgba(11, 11, 14, 0.7);
-          border: 1px solid rgba(255,255,255,0.06);
-          border-radius: 16px;
-          backdrop-filter: blur(12px);
-          -webkit-backdrop-filter: blur(12px);
-          z-index: 15;
-          width: 230px;
-          top: 50%;
-          transform: translateY(-50%);
-          transition: all 0.3s ease;
-        }
-        
-        .side-card:hover {
-          transform: translateY(-54%) scale(1.03);
-          border-color: rgba(255,255,255,0.15);
-        }
-        
-        .side-card .icon { font-size: 24px; margin-bottom: 2px; }
-        .side-card .label {
-          font-family: 'Space Grotesk', sans-serif;
-          font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
-          text-transform: uppercase; color: rgba(255,255,255,0.4);
-        }
-        .side-card .value {
-          font-family: 'Space Grotesk', sans-serif;
-          font-size: 16px; font-weight: 600; color: #fff;
-        }
-        .side-card .sub {
-          font-size: 12px; color: rgba(255,255,255,0.35); line-height: 1.5;
-        }
-        
-        .side-card.orange-accent { 
-          left: 40px;
-          border-left: 4px solid #ff5e3a; 
-          box-shadow: -10px 0 30px rgba(255,94,58,0.03);
-        }
-        .side-card.cyan-accent { 
-          right: 40px;
-          border-right: 4px solid #00d9ff; 
-          box-shadow: 10px 0 30px rgba(0,217,255,0.03);
-        }
-
-        /* Ajustements d'écrans pour éviter les chevauchements */
-        @media (max-width: 1340px) {
-          .bg-word { font-size: 110px; }
-          .side-card.orange-accent { left: 16px; }
-          .side-card.cyan-accent { right: 16px; }
-        }
-
-        @media (max-width: 1120px) {
-          .bg-word { display: none; }
-        }
-
-        @media (max-width: 960px) {
-          .side-card { display: none; }
+        .circuit-light-cyan {
+          fill: none; stroke: #5ce1ff; stroke-width: 2.5; stroke-linecap: round;
+          stroke-dasharray: 60 2340;
+          opacity: 0.9;
+          animation: travel 12s linear infinite;
+          animation-delay: -4s;
+          filter: drop-shadow(0 0 6px rgba(0,217,255,0.8));
         }
 
         @media (max-width: 768px) {
           .hero-name { font-size: 42px !important; }
-          .hero-buttons { flex-direction: column; width: 100%; }
-          .hero-buttons a { width: 100%; text-align: center; }
+          .hero-desc  { font-size: 14px !important; }
+          .hero-buttons { flex-direction: column; align-items: center; }
         }
       `}</style>
 
@@ -262,109 +166,59 @@ function Hero() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          padding: "80px 24px",
+          padding: "60px 40px",
           position: "relative",
           overflow: "hidden",
           fontFamily: "'Inter', sans-serif",
         }}
       >
-        {/* Halos lumineux géants */}
+        {/* Halos */}
         <div style={{
-          position: "absolute", width: "800px", height: "800px", borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(255,94,58,0.12) 0%, transparent 70%)",
-          top: "-10%", left: "-5%", pointerEvents: "none", zIndex: 0
+          position: "absolute", width: "600px", height: "600px", borderRadius: "50%",
+          background: "radial-gradient(circle, rgba(255,94,58,0.13) 0%, transparent 70%)",
+          top: "-180px", left: "-180px", pointerEvents: "none",
         }} />
         <div style={{
-          position: "absolute", width: "800px", height: "800px", borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(0,217,255,0.1) 0%, transparent 70%)",
-          bottom: "-10%", right: "-5%", pointerEvents: "none", zIndex: 0
+          position: "absolute", width: "550px", height: "550px", borderRadius: "50%",
+          background: "radial-gradient(circle, rgba(0,217,255,0.12) 0%, transparent 70%)",
+          bottom: "-150px", right: "-150px", pointerEvents: "none",
         }} />
 
-        {/* Mots en arrière-plan (DRIVE / DANCE) */}
-        <div className="bg-word-container">
-          <div className="bg-word left">DRIVE</div>
-          <div className="bg-word right">DANCE</div>
-        </div>
+        {/* Circuits */}
+        <svg
+          viewBox="0 0 1600 900"
+          preserveAspectRatio="xMidYMid slice"
+          style={{ position: "absolute", inset: 0, zIndex: 0, width: "100%", height: "100%" }}
+        >
+          {/* Circuit gauche (orange) */}
+          <path className="circuit-base-orange" d="M -100 650 L 150 650 C 250 650, 280 550, 220 480 C 160 410, 220 320, 320 320 L 480 320 C 560 320, 600 250, 540 190 C 480 130, 360 150, 320 230 C 280 310, 150 300, 120 200 C 90 100, -50 80, -120 160" />
+          <path className="circuit-light-orange" d="M -100 650 L 150 650 C 250 650, 280 550, 220 480 C 160 410, 220 320, 320 320 L 480 320 C 560 320, 600 250, 540 190 C 480 130, 360 150, 320 230 C 280 310, 150 300, 120 200 C 90 100, -50 80, -120 160" />
 
-        {/* Lignes de vitesse */}
-        <div className="speedline orange" style={{ top: "25%", left: 0, width: "300px" }} />
-        <div className="speedline cyan"   style={{ bottom: "25%", right: 0, width: "300px" }} />
+          {/* Circuit droit (cyan) */}
+          <path className="circuit-base-cyan" d="M 1700 250 L 1450 250 C 1350 250, 1320 350, 1380 420 C 1440 490, 1380 580, 1280 580 L 1120 580 C 1040 580, 1000 650, 1060 710 C 1120 770, 1240 750, 1280 670 C 1320 590, 1450 600, 1480 700 C 1510 800, 1660 820, 1730 740" />
+          <path className="circuit-light-cyan" d="M 1700 250 L 1450 250 C 1350 250, 1320 350, 1380 420 C 1440 490, 1380 580, 1280 580 L 1120 580 C 1040 580, 1000 650, 1060 710 C 1120 770, 1240 750, 1280 670 C 1320 590, 1450 600, 1480 700 C 1510 800, 1660 820, 1730 740" />
+        </svg>
 
-        {/* --- DESSIN DES CIRCUITS (CONTAINER FORCÉ ET TRACÉ RESPONSIVE) --- */}
-        <div style={{ 
-          position: "absolute", 
-          top: 0, left: 0, right: 0, bottom: 0,
-          width: "100%", height: "100%", 
-          zIndex: 2, pointerEvents: "none" 
-        }}>
-          <svg
-            width="100%"
-            height="100%"
-            viewBox="0 0 1440 900"
-            preserveAspectRatio="none"
-            style={{ display: "block" }}
-          >
-            {/* Circuit Gauche - Orange */}
-            <path
-              className="circuit-track"
-              d="M -20,250 C 180,150 120,480 320,400 C 450,350 250,700 60,800"
-              fill="none"
-              stroke="#ff5e3a"
-              strokeWidth="2.5"
-              opacity="0.35"
-            />
-            <path
-              d="M -20,250 C 180,150 120,480 320,400 C 450,350 250,700 60,800"
-              fill="none"
-              stroke="#ff5e3a"
-              strokeWidth="0.75"
-              opacity="0.1"
-            />
-
-            {/* Circuit Droite - Cyan */}
-            <path
-              className="circuit-track"
-              d="M 1460,550 C 1250,650 1300,300 1100,350 C 950,400 1120,150 1280,80"
-              fill="none"
-              stroke="#00d9ff"
-              strokeWidth="2.5"
-              opacity="0.35"
-            />
-            <path
-              d="M 1460,550 C 1250,650 1300,300 1100,350 C 950,400 1120,150 1280,80"
-              fill="none"
-              stroke="#00d9ff"
-              strokeWidth="0.75"
-              opacity="0.1"
-            />
-          </svg>
-        </div>
-
-        {/* Carte Latérale Gauche */}
-        <div className="side-card orange-accent">
-          <div className="icon">🏎️</div>
-          <div className="label">Télémétrie</div>
-          <div className="value">Algorithme & F1</div>
-          <div className="sub">Analyse de données et performance vécues à 300 km/h.</div>
-        </div>
-
-        {/* Carte Latérale Droite */}
-        <div className="side-card cyan-accent">
-          <div className="icon">🧭</div>
-          <div className="label">Mouvement</div>
-          <div className="value">Trajectoires</div>
-          <div className="sub">De la rigueur de la course à pied à la fluidité de la danse.</div>
-        </div>
-
-        {/* Bloc Central */}
-        <div className="hero-main-content">
-          {/* Photo */}
-          <div style={{ position: "relative", width: "150px", height: "150px", marginBottom: "32px", margin: "0 auto 32px auto" }}>
+        {/* Contenu */}
+        <div
+          className="hero-main-content"
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            textAlign: "center",
+            maxWidth: "800px",
+            width: "100%",
+            position: "relative",
+            zIndex: 2,
+          }}
+        >
+          {/* Photo avec anneau */}
+          <div style={{ position: "relative", width: "150px", height: "150px", marginBottom: "24px" }}>
             <div className="photo-ring"></div>
             <div style={{
               width: "100%", height: "100%", borderRadius: "50%",
-              overflow: "hidden", border: "4px solid #0a0a0c",
-              position: "relative", zIndex: 2
+              overflow: "hidden", border: "3px solid #161618",
             }}>
               <img
                 src="/assets/photo_intra.jpg"
@@ -374,8 +228,8 @@ function Hero() {
             </div>
           </div>
 
-          {/* Badges */}
-          <div style={{ display: "flex", gap: "8px", marginBottom: "24px", flexWrap: "wrap", justifyContent: "center" }}>
+          {/* Tampons passions */}
+          <div style={{ display: "flex", gap: "10px", marginBottom: "18px", flexWrap: "wrap", justifyContent: "center" }}>
             <span className="stamp orange">F1 • MotoGP</span>
             <span className="stamp cyan">Runner</span>
             <span className="stamp">Danseuse</span>
@@ -388,27 +242,25 @@ function Hero() {
             style={{
               fontFamily: "'Space Grotesk', sans-serif",
               fontSize: "56px", fontWeight: "700", color: "#fff",
-              lineHeight: 1.1, marginBottom: "12px", letterSpacing: "-1px",
-              textAlign: "center"
+              lineHeight: 1.05, marginBottom: "8px", letterSpacing: "-1px",
             }}
           >
             Lélia <span>Perez</span>
           </h1>
 
-          {/* Slogan */}
+          {/* Rôle */}
           <p style={{
             fontFamily: "'Space Grotesk', sans-serif",
-            fontSize: "18px", fontWeight: "500",
-            color: "rgba(255,255,255,0.6)", marginBottom: "20px", letterSpacing: "0.5px",
-            textAlign: "center"
+            fontSize: "17px", fontWeight: "500",
+            color: "rgba(255,255,255,0.55)", marginBottom: "16px", letterSpacing: "0.5px",
           }}>
             Développeuse Web — toujours en mouvement
           </p>
 
-          {/* Bio */}
+          {/* Description */}
           <p
             className="hero-desc"
-            style={{ fontSize: "15px", color: "rgba(255,255,255,0.45)", lineHeight: "1.75", maxWidth: "520px", margin: "0 auto 36px auto", textAlign: "center" }}
+            style={{ fontSize: "14px", color: "rgba(255,255,255,0.4)", lineHeight: "1.8", maxWidth: "460px", marginBottom: "28px" }}
           >
             Étudiante en informatique à l'ETNA, passionnée par le développement web.
             Entre Formule 1, MotoGP, course à pied et danse, je transforme cette énergie
@@ -416,21 +268,21 @@ function Hero() {
           </p>
 
           {/* Boutons */}
-          <div className="hero-buttons" style={{ display: "flex", gap: "14px", flexWrap: "wrap", justifyContent: "center", marginBottom: "40px" }}>
+          <div className="hero-buttons" style={{ display: "flex", gap: "14px", flexWrap: "wrap", justifyContent: "center", marginBottom: "30px" }}>
             <a href="#contact" className="btn-primary-hero">
               Me contacter
             </a>
             <a href="#projects" className="btn-outline-hero">
               Voir mes projets
             </a>
-            <a href="#skills" className="btn-outline-hero">
+            <a href="#skills" className="btn-primary-hero">
               Compétences
             </a>
           </div>
 
-          {/* Égaliseur sonore */}
-          <div style={{ display: "flex", alignItems: "center", gap: "4px", height: "28px", marginBottom: "40px", justifyContent: "center" }}>
-            {[10, 22, 14, 26, 12, 20, 8, 24, 14, 18, 10].map((h, i) => (
+          {/* Onde sonore */}
+          <div style={{ display: "flex", alignItems: "center", gap: "4px", height: "24px", marginBottom: "30px" }}>
+            {[8, 18, 12, 22, 10, 16, 7, 20, 12, 15, 8].map((h, i) => (
               <div
                 key={i}
                 className="soundwave-bar"
@@ -439,22 +291,31 @@ function Hero() {
             ))}
           </div>
 
-          {/* Réseaux */}
-          <div style={{ display: "flex", gap: "12px", justifyContent: "center" }}>
-            <a href="https://github.com/przlelia-art" target="_blank" rel="noopener noreferrer" className="social-btn-hero">
+          {/* Liens sociaux */}
+          <div style={{ display: "flex", gap: "10px", justifyContent: "center" }}>
+            <a
+              href="https://github.com/przlelia-art"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-btn-hero"
+            >
               <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
               </svg>
               GitHub
             </a>
-            <a href="https://www.linkedin.com/in/l%C3%A9lia-perez-73a499309/" target="_blank" rel="noopener noreferrer" className="social-btn-hero">
+            <a
+              href="https://www.linkedin.com/in/l%C3%A9lia-perez-73a499309/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="social-btn-hero"
+            >
               <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
               </svg>
               LinkedIn
             </a>
           </div>
-
         </div>
       </section>
     </>
