@@ -359,6 +359,9 @@ function Hero() {
             <a href="#contact" className="btn-primary-hero">
               Me contacter
             </a>
+            <a href="#about" className="btn-outline-hero">
+              À propos
+            </a>
             <a href="#projects" className="btn-outline-hero">
               Voir mes projets
             </a>
