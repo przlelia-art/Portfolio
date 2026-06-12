@@ -254,7 +254,7 @@ function Hero() {
           <div>
             <div className="side-label">Télémétrie</div>
             <div className="side-title">Algorithme & F1</div>
-            <div className="side-sub">Analyse de données et performance vécues à 300 km/h.</div>
+            <div className="side-sub">Stratégie de course, logique de dev — même état d'esprit.</div>
           </div>
         </div>
 
