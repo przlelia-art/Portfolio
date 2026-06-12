@@ -21,7 +21,7 @@ function Hero() {
           to   { transform: rotate(360deg); }
         }
         @keyframes wave {
-          0%, 100% { transform: scaleY(0.4); opacity: 0.6; }
+          0%, 100 canvas { transform: scaleY(0.4); opacity: 0.6; }
           50%       { transform: scaleY(1); opacity: 1; }
         }
         @keyframes trackFlow {
@@ -131,13 +131,11 @@ function Hero() {
           transform: translateY(-2px);
         }
 
-        /* --- AJOUTS ET AMÉLIORATIONS DES EFFETS --- */
-        
         .speedline {
           position: absolute;
           height: 2px;
           border-radius: 2px;
-          filter: blur(1px);
+          filter: blur(1.5px);
           opacity: 0.6;
           pointer-events: none;
         }
@@ -145,10 +143,10 @@ function Hero() {
         .speedline.cyan   { background: linear-gradient(270deg, #00d9ff, transparent); }
 
         .track-line {
-          animation: trackFlow 20s linear infinite;
+          animation: trackFlow 15s linear infinite;
         }
 
-        /* Texte géant en filigrane vertical */
+        /* Texte géant en filigrane vertical arrière-plan */
         .bg-word {
           position: absolute;
           font-family: 'Space Grotesk', sans-serif;
@@ -175,7 +173,7 @@ function Hero() {
           transform-origin: right center;
         }
 
-        /* Cartes latérales stylisées */
+        /* Cartes latérales ajustées en hauteur */
         .side-card {
           position: absolute;
           display: flex;
@@ -183,16 +181,18 @@ function Hero() {
           gap: 6px;
           padding: 20px;
           background: rgba(10, 10, 12, 0.4);
-          border: 1px solid rgba(255,255,255,0.05);
+          border: 1px solid rgba(255,255,255,0.06);
           border-radius: 16px;
           backdrop-filter: blur(12px);
           -webkit-backdrop-filter: blur(12px);
           z-index: 3;
-          width: 210px;
+          width: 220px;
+          top: 42% !important; /* Fixe la position verticale au niveau du nom */
+          transform: translateY(-50%) !important;
           transition: all 0.3s ease;
         }
         .side-card:hover {
-          transform: translateY(-50%) scale(1.03) !important;
+          transform: translateY(-54%) scale(1.04) !important;
           background: rgba(15, 15, 18, 0.6);
         }
         .side-card .icon { font-size: 24px; margin-bottom: 2px; }
@@ -209,16 +209,18 @@ function Hero() {
           font-size: 12px; color: rgba(255,255,255,0.35); line-height: 1.5;
         }
         .side-card.orange-accent { 
+          left: 80px !important; /* Rapprochement horizontal */
           border-left: 3px solid #ff5e3a; 
-          box-shadow: -10px 0 30px rgba(255,94,58,0.03);
+          box-shadow: -10px 0 30px rgba(255,94,58,0.04);
         }
         .side-card.cyan-accent { 
+          right: 80px !important; /* Rapprochement horizontal */
           border-right: 3px solid #00d9ff; 
-          box-shadow: 10px 0 30px rgba(0,217,255,0.03);
+          box-shadow: 10px 0 30px rgba(0,217,255,0.04);
         }
 
-        /* Responsive Breakpoints */
-        @media (max-width: 1200px) {
+        /* Reponsive - Cache sur petits écrans pour garder la lisibilité */
+        @media (max-width: 1250px) {
           .side-card { display: none; }
           .bg-word { font-size: 110px; }
         }
@@ -245,29 +247,29 @@ function Hero() {
           fontFamily: "'Inter', sans-serif",
         }}
       >
-        {/* Halos lumineux (Glows d'arrière-plan pour la profondeur) */}
+        {/* Halos lumineux (Glows d'arrière-plan accentués) */}
         <div style={{
-          position: "absolute", width: "700px", height: "700px", borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(255,94,58,0.08) 0%, transparent 70%)",
-          top: "-10%", left: "-10%", pointerEvents: "none", zIndex: 1
+          position: "absolute", width: "800px", height: "800px", borderRadius: "50%",
+          background: "radial-gradient(circle, rgba(255,94,58,0.11) 0%, transparent 75%)",
+          top: "-10%", left: "-10%", pointerEvents: "none", zIndex: 0
         }} />
         <div style={{
-          position: "absolute", width: "700px", height: "700px", borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(0,217,255,0.07) 0%, transparent 70%)",
-          bottom: "-10%", right: "-10%", pointerEvents: "none", zIndex: 1
+          position: "absolute", width: "800px", height: "800px", borderRadius: "50%",
+          background: "radial-gradient(circle, rgba(0,217,255,0.09) 0%, transparent 75%)",
+          bottom: "-10%", right: "-10%", pointerEvents: "none", zIndex: 0
         }} />
 
-        {/* Texte géant filigrane (Remplissage typographique abstrait) */}
+        {/* Texte géant filigrane */}
         <div className="bg-word left">DRIVE</div>
         <div className="bg-word right">DANCE</div>
 
-        {/* Speedlines (Traînées lumineuses horizontales effet vitesse) */}
-        <div className="speedline orange" style={{ top: "25%", left: 0, width: "250px", height: '1.5px' }} />
-        <div className="speedline orange" style={{ top: "28%", left: 0, width: "120px", opacity: 0.3 }} />
-        <div className="speedline cyan"   style={{ top: "65%", right: 0, width: "280px", height: '1.5px' }} />
-        <div className="speedline cyan"   style={{ top: "69%", right: 0, width: "140px", opacity: 0.3 }} />
+        {/* Speedlines (Traînées lumineuses horizontales) */}
+        <div className="speedline orange" style={{ top: "25%", left: 0, width: "280px" }} />
+        <div className="speedline orange" style={{ top: "28%", left: 0, width: "140px", opacity: 0.3 }} />
+        <div className="speedline cyan"   style={{ top: "65%", right: 0, width: "310px" }} />
+        <div className="speedline cyan"   style={{ top: "69%", right: 0, width: "160px", opacity: 0.3 }} />
 
-        {/* Courbes de circuits / Télémétrie en SVG fluide */}
+        {/* Courbes de circuits / Télémétrie en SVG fluide (Visibilité augmentée) */}
         <svg
           viewBox="0 0 1440 800"
           preserveAspectRatio="none"
@@ -277,27 +279,27 @@ function Hero() {
           <path 
             className="track-line" 
             d="M -100,250 C 150,180 120,450 320,400 C 450,360 300,650 150,750" 
-            stroke="#ff5e3a" strokeWidth="1.5" fill="none" opacity="0.12" strokeDasharray="5 8" 
+            stroke="#ff5e3a" strokeWidth="2" fill="none" opacity="0.22" strokeDasharray="6 10" 
           />
           <path 
             d="M -100,250 C 150,180 120,450 320,400 C 450,360 300,650 150,750" 
-            stroke="#ff5e3a" strokeWidth="0.5" fill="none" opacity="0.05" 
+            stroke="#ff5e3a" strokeWidth="0.5" fill="none" opacity="0.08" 
           />
           
           {/* Courbe Cyan (Droite) */}
           <path 
             className="track-line" 
             d="M 1540,550 C 1200,620 1250,300 1050,350 C 900,390 1050,150 1200,50" 
-            stroke="#00d9ff" strokeWidth="1.5" fill="none" opacity="0.12" strokeDasharray="5 8" 
+            stroke="#00d9ff" strokeWidth="2" fill="none" opacity="0.22" strokeDasharray="6 10" 
           />
           <path 
             d="M 1540,550 C 1200,620 1250,300 1050,350 C 900,390 1050,150 1200,50" 
-            stroke="#00d9ff" strokeWidth="0.5" fill="none" opacity="0.05" 
+            stroke="#00d9ff" strokeWidth="0.5" fill="none" opacity="0.08" 
           />
         </svg>
 
         {/* Carte Latérale Gauche - F1 / Télémétrie */}
-        <div className="side-card orange-accent" style={{ top: "50%", left: "60px", transform: "translateY(-50%)" }}>
+        <div className="side-card orange-accent">
           <div className="icon">🏎️</div>
           <div className="label">Télémétrie</div>
           <div className="value">Algorithme & F1</div>
@@ -305,7 +307,7 @@ function Hero() {
         </div>
 
         {/* Carte Latérale Droite - Trajectoire / Sport */}
-        <div className="side-card cyan-accent" style={{ top: "50%", right: "60px", transform: "translateY(-50%)" }}>
+        <div className="side-card cyan-accent">
           <div className="icon">🧭</div>
           <div className="label">Mouvement</div>
           <div className="value">Trajectoires</div>
@@ -320,7 +322,7 @@ function Hero() {
             flexDirection: "column",
             alignItems: "center",
             textAlign: "center",
-            maxWidth: "750px",
+            maxWidth: "720px",
             width: "100%",
             position: "relative",
             zIndex: 2,
