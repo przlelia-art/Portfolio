@@ -131,86 +131,103 @@ function Hero() {
           transform: translateY(-2px);
         }
 
+        /* --- AJOUTS ET AMÉLIORATIONS DES EFFETS --- */
+        
         .speedline {
           position: absolute;
           height: 2px;
           border-radius: 2px;
-          filter: blur(1.5px);
-          opacity: 0.5;
+          filter: blur(1px);
+          opacity: 0.6;
+          pointer-events: none;
         }
-        .speedline.orange { background: linear-gradient(90deg, transparent, #ff5e3a, transparent); }
-        .speedline.cyan   { background: linear-gradient(90deg, transparent, #00d9ff, transparent); }
+        .speedline.orange { background: linear-gradient(90deg, #ff5e3a, transparent); }
+        .speedline.cyan   { background: linear-gradient(270deg, #00d9ff, transparent); }
 
         .track-line {
-          animation: trackFlow 6s linear infinite;
+          animation: trackFlow 20s linear infinite;
         }
 
-        /* Texte géant en filigrane */
+        /* Texte géant en filigrane vertical */
         .bg-word {
           position: absolute;
           font-family: 'Space Grotesk', sans-serif;
           font-weight: 800;
-          font-size: 220px;
+          font-size: 160px;
           line-height: 1;
           color: transparent;
-          -webkit-text-stroke: 1px rgba(255,255,255,0.05);
-          letter-spacing: 4px;
+          -webkit-text-stroke: 1px rgba(255,255,255,0.03);
+          letter-spacing: 8px;
           user-select: none;
           z-index: 0;
-          white-space: nowrap;
           pointer-events: none;
         }
         .bg-word.left {
-          top: 50%;
-          left: -90px;
-          transform: translateY(-50%) rotate(-90deg) translateX(-50%);
+          top: 35%;
+          left: -40px;
+          transform: rotate(-90deg);
           transform-origin: left center;
         }
         .bg-word.right {
-          top: 50%;
-          right: -90px;
-          transform: translateY(-50%) rotate(90deg) translateX(50%);
+          bottom: 35%;
+          right: -150px;
+          transform: rotate(90deg);
           transform-origin: right center;
         }
 
-        /* Cartes latérales */
+        /* Cartes latérales stylisées */
         .side-card {
           position: absolute;
           display: flex;
           flex-direction: column;
           gap: 6px;
-          padding: 16px 20px;
-          background: rgba(255,255,255,0.03);
-          border: 1px solid rgba(255,255,255,0.08);
-          border-radius: 14px;
-          backdrop-filter: blur(8px);
-          z-index: 1;
-          max-width: 180px;
+          padding: 20px;
+          background: rgba(10, 10, 12, 0.4);
+          border: 1px solid rgba(255,255,255,0.05);
+          border-radius: 16px;
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+          z-index: 3;
+          width: 210px;
+          transition: all 0.3s ease;
         }
-        .side-card .icon { font-size: 22px; margin-bottom: 4px; }
+        .side-card:hover {
+          transform: translateY(-50%) scale(1.03) !important;
+          background: rgba(15, 15, 18, 0.6);
+        }
+        .side-card .icon { font-size: 24px; margin-bottom: 2px; }
         .side-card .label {
           font-family: 'Space Grotesk', sans-serif;
-          font-size: 10px; font-weight: 700; letter-spacing: 2px;
-          text-transform: uppercase; color: rgba(255,255,255,0.3);
+          font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
+          text-transform: uppercase; color: rgba(255,255,255,0.4);
         }
         .side-card .value {
           font-family: 'Space Grotesk', sans-serif;
-          font-size: 15px; font-weight: 600; color: #fff;
+          font-size: 16px; font-weight: 600; color: #fff;
         }
         .side-card .sub {
           font-size: 12px; color: rgba(255,255,255,0.35); line-height: 1.5;
         }
-        .side-card.orange-accent { border-color: rgba(255,94,58,0.2); }
-        .side-card.cyan-accent { border-color: rgba(0,217,255,0.2); }
+        .side-card.orange-accent { 
+          border-left: 3px solid #ff5e3a; 
+          box-shadow: -10px 0 30px rgba(255,94,58,0.03);
+        }
+        .side-card.cyan-accent { 
+          border-right: 3px solid #00d9ff; 
+          box-shadow: 10px 0 30px rgba(0,217,255,0.03);
+        }
 
-        @media (max-width: 1100px) {
-          .side-card, .bg-word { display: none; }
+        /* Responsive Breakpoints */
+        @media (max-width: 1200px) {
+          .side-card { display: none; }
+          .bg-word { font-size: 110px; }
         }
 
         @media (max-width: 768px) {
-          .hero-name { font-size: 42px !important; }
-          .hero-desc  { font-size: 14px !important; }
-          .hero-buttons { flex-direction: column; align-items: center; }
+          .bg-word { display: none; }
+          .hero-name { font-size: 46px !important; }
+          .hero-buttons { flex-direction: column; width: 100%; max-width: 300px; }
+          .hero-buttons a { width: 100%; text-align: center; }
         }
       `}</style>
 
@@ -222,64 +239,80 @@ function Hero() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          padding: "60px 40px",
+          padding: "80px 24px",
           position: "relative",
           overflow: "hidden",
           fontFamily: "'Inter', sans-serif",
         }}
       >
-        {/* Halos */}
+        {/* Halos lumineux (Glows d'arrière-plan pour la profondeur) */}
         <div style={{
-          position: "absolute", width: "600px", height: "600px", borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(255,94,58,0.14) 0%, transparent 70%)",
-          top: "-180px", left: "-150px", pointerEvents: "none",
+          position: "absolute", width: "700px", height: "700px", borderRadius: "50%",
+          background: "radial-gradient(circle, rgba(255,94,58,0.08) 0%, transparent 70%)",
+          top: "-10%", left: "-10%", pointerEvents: "none", zIndex: 1
         }} />
         <div style={{
-          position: "absolute", width: "550px", height: "550px", borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(0,217,255,0.12) 0%, transparent 70%)",
-          bottom: "-150px", right: "-120px", pointerEvents: "none",
+          position: "absolute", width: "700px", height: "700px", borderRadius: "50%",
+          background: "radial-gradient(circle, rgba(0,217,255,0.07) 0%, transparent 70%)",
+          bottom: "-10%", right: "-10%", pointerEvents: "none", zIndex: 1
         }} />
 
-        {/* Texte géant filigrane */}
+        {/* Texte géant filigrane (Remplissage typographique abstrait) */}
         <div className="bg-word left">DRIVE</div>
         <div className="bg-word right">DANCE</div>
 
-        {/* Speedlines */}
-        <div className="speedline orange" style={{ top: "18%", left: 0, width: "38%" }} />
-        <div className="speedline orange" style={{ top: "24%", left: 0, width: "22%" }} />
-        <div className="speedline cyan"   style={{ top: "32%", left: 0, width: "30%" }} />
-        <div className="speedline cyan"   style={{ top: "68%", right: 0, width: "36%" }} />
-        <div className="speedline orange" style={{ top: "76%", right: 0, width: "24%" }} />
-        <div className="speedline cyan"   style={{ top: "84%", right: 0, width: "30%" }} />
+        {/* Speedlines (Traînées lumineuses horizontales effet vitesse) */}
+        <div className="speedline orange" style={{ top: "25%", left: 0, width: "250px", height: '1.5px' }} />
+        <div className="speedline orange" style={{ top: "28%", left: 0, width: "120px", opacity: 0.3 }} />
+        <div className="speedline cyan"   style={{ top: "65%", right: 0, width: "280px", height: '1.5px' }} />
+        <div className="speedline cyan"   style={{ top: "69%", right: 0, width: "140px", opacity: 0.3 }} />
 
-        {/* Lignes de circuit animées en fond */}
+        {/* Courbes de circuits / Télémétrie en SVG fluide */}
         <svg
-          viewBox="0 0 1000 600"
+          viewBox="0 0 1440 800"
           preserveAspectRatio="none"
-          style={{ position: "absolute", inset: 0, width: "100%", height: "100%", zIndex: 0, opacity: 0.5 }}
+          style={{ position: "absolute", inset: 0, width: "100%", height: "100%", zIndex: 1, pointerEvents: "none" }}
         >
-          <path className="track-line" d="M -50 480 Q 150 380, 350 460 T 700 420 Q 900 380, 1050 470" stroke="#ff5e3a" strokeWidth="1.5" fill="none" opacity="0.18" strokeDasharray="6 10" />
-          <path className="track-line" d="M -50 460 Q 180 400, 380 470 T 750 440 Q 950 410, 1050 480" stroke="#ff5e3a" strokeWidth="1" fill="none" opacity="0.1" strokeDasharray="4 8" />
-          <path className="track-line" d="M -50 120 Q 250 40, 480 130 T 850 80 Q 1000 60, 1050 140" stroke="#00d9ff" strokeWidth="1.5" fill="none" opacity="0.16" strokeDasharray="6 10" />
-          <path className="track-line" d="M -50 140 Q 280 70, 500 150 T 880 100 Q 1020 80, 1050 160" stroke="#00d9ff" strokeWidth="1" fill="none" opacity="0.1" strokeDasharray="4 8" />
+          {/* Courbe Orange (Gauche) */}
+          <path 
+            className="track-line" 
+            d="M -100,250 C 150,180 120,450 320,400 C 450,360 300,650 150,750" 
+            stroke="#ff5e3a" strokeWidth="1.5" fill="none" opacity="0.12" strokeDasharray="5 8" 
+          />
+          <path 
+            d="M -100,250 C 150,180 120,450 320,400 C 450,360 300,650 150,750" 
+            stroke="#ff5e3a" strokeWidth="0.5" fill="none" opacity="0.05" 
+          />
+          
+          {/* Courbe Cyan (Droite) */}
+          <path 
+            className="track-line" 
+            d="M 1540,550 C 1200,620 1250,300 1050,350 C 900,390 1050,150 1200,50" 
+            stroke="#00d9ff" strokeWidth="1.5" fill="none" opacity="0.12" strokeDasharray="5 8" 
+          />
+          <path 
+            d="M 1540,550 C 1200,620 1250,300 1050,350 C 900,390 1050,150 1200,50" 
+            stroke="#00d9ff" strokeWidth="0.5" fill="none" opacity="0.05" 
+          />
         </svg>
 
-        {/* Cartes latérales */}
-        <div className="side-card orange-accent" style={{ top: "50%", left: "50px", transform: "translateY(-50%)" }}>
-          <div className="icon">🏁</div>
-          <div className="label">En ce moment</div>
-          <div className="value">F1 & MotoGP</div>
-          <div className="sub">Passionnée de vitesse et de stratégie de course.</div>
+        {/* Carte Latérale Gauche - F1 / Télémétrie */}
+        <div className="side-card orange-accent" style={{ top: "50%", left: "60px", transform: "translateY(-50%)" }}>
+          <div className="icon">🏎️</div>
+          <div className="label">Télémétrie</div>
+          <div className="value">Algorithme & F1</div>
+          <div className="sub">Analyse de données et performance vécues à 300 km/h.</div>
         </div>
 
-        <div className="side-card cyan-accent" style={{ top: "50%", right: "50px", transform: "translateY(-50%)" }}>
-          <div className="icon">🎯</div>
-          <div className="label">Objectif</div>
-          <div className="value">20 km — 10 oct.</div>
-          <div className="sub">Course solidaire, plan d'entraînement en cours.</div>
+        {/* Carte Latérale Droite - Trajectoire / Sport */}
+        <div className="side-card cyan-accent" style={{ top: "50%", right: "60px", transform: "translateY(-50%)" }}>
+          <div className="icon">🧭</div>
+          <div className="label">Mouvement</div>
+          <div className="value">Trajectoires</div>
+          <div className="sub">De la rigueur de la course à pied à la fluidité de la danse.</div>
         </div>
 
-        {/* Contenu */}
+        {/* Contenu Principal */}
         <div
           className="hero-main-content"
           style={{
@@ -287,18 +320,19 @@ function Hero() {
             flexDirection: "column",
             alignItems: "center",
             textAlign: "center",
-            maxWidth: "800px",
+            maxWidth: "750px",
             width: "100%",
             position: "relative",
             zIndex: 2,
           }}
         >
-          {/* Photo avec anneau */}
-          <div style={{ position: "relative", width: "160px", height: "160px", marginBottom: "28px" }}>
+          {/* Photo avec anneau animé */}
+          <div style={{ position: "relative", width: "150px", height: "150px", marginBottom: "32px" }}>
             <div className="photo-ring"></div>
             <div style={{
               width: "100%", height: "100%", borderRadius: "50%",
-              overflow: "hidden", border: "3px solid #161618",
+              overflow: "hidden", border: "4px solid #0a0a0c",
+              position: "relative", zIndex: 2
             }}>
               <img
                 src="/assets/photo_intra.jpg"
@@ -308,8 +342,8 @@ function Hero() {
             </div>
           </div>
 
-          {/* Tampons passions */}
-          <div style={{ display: "flex", gap: "10px", marginBottom: "20px", flexWrap: "wrap", justifyContent: "center" }}>
+          {/* Tampons / Badges Passions */}
+          <div style={{ display: "flex", gap: "8px", marginBottom: "24px", flexWrap: "wrap", justifyContent: "center" }}>
             <span className="stamp orange">F1 • MotoGP</span>
             <span className="stamp cyan">Runner</span>
             <span className="stamp">Danseuse</span>
@@ -321,8 +355,8 @@ function Hero() {
             className="hero-name"
             style={{
               fontFamily: "'Space Grotesk', sans-serif",
-              fontSize: "60px", fontWeight: "700", color: "#fff",
-              lineHeight: 1.05, marginBottom: "10px", letterSpacing: "-1px",
+              fontSize: "56px", fontWeight: "700", color: "#fff",
+              lineHeight: 1.1, marginBottom: "12px", letterSpacing: "-1px",
             }}
           >
             Lélia <span>Perez</span>
@@ -332,7 +366,7 @@ function Hero() {
           <p style={{
             fontFamily: "'Space Grotesk', sans-serif",
             fontSize: "18px", fontWeight: "500",
-            color: "rgba(255,255,255,0.55)", marginBottom: "18px", letterSpacing: "0.5px",
+            color: "rgba(255,255,255,0.6)", marginBottom: "20px", letterSpacing: "0.5px",
           }}>
             Développeuse Web — toujours en mouvement
           </p>
@@ -340,28 +374,28 @@ function Hero() {
           {/* Description */}
           <p
             className="hero-desc"
-            style={{ fontSize: "15px", color: "rgba(255,255,255,0.4)", lineHeight: "1.8", maxWidth: "480px", marginBottom: "32px" }}
+            style={{ fontSize: "15px", color: "rgba(255,255,255,0.45)", lineHeight: "1.75", maxWidth: "520px", marginBottom: "36px" }}
           >
             Étudiante en informatique à l'ETNA, passionnée par le développement web.
             Entre Formule 1, MotoGP, course à pied et danse, je transforme cette énergie
             en projets concrets et j'explore sans cesse de nouvelles technologies.
           </p>
 
-          {/* Boutons */}
-          <div className="hero-buttons" style={{ display: "flex", gap: "14px", flexWrap: "wrap", justifyContent: "center", marginBottom: "40px" }}>
+          {/* Boutons d'action */}
+          <div className="hero-buttons" style={{ display: "flex", gap: "14px", flexWrap: "wrap", justifyContent: "center", marginBottom: "44px" }}>
             <a href="#contact" className="btn-primary-hero">
               Me contacter
             </a>
             <a href="#projects" className="btn-outline-hero">
               Voir mes projets
             </a>
-            <a href="#skills" className="btn-primary-hero">
+            <a href="#skills" className="btn-outline-hero">
               Compétences
             </a>
           </div>
 
-          {/* Onde sonore */}
-          <div style={{ display: "flex", alignItems: "center", gap: "4px", height: "28px", marginBottom: "36px" }}>
+          {/* Onde sonore animée */}
+          <div style={{ display: "flex", alignItems: "center", gap: "4px", height: "28px", marginBottom: "40px" }}>
             {[10, 22, 14, 26, 12, 20, 8, 24, 14, 18, 10].map((h, i) => (
               <div
                 key={i}
@@ -371,8 +405,8 @@ function Hero() {
             ))}
           </div>
 
-          {/* Liens sociaux */}
-          <div style={{ display: "flex", gap: "10px", justifyContent: "center" }}>
+          {/* Liens réseaux sociaux */}
+          <div style={{ display: "flex", gap: "12px", justifyContent: "center" }}>
             <a
               href="https://github.com/przlelia-art"
               target="_blank"
