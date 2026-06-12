@@ -135,7 +135,7 @@ function Hero() {
         }
 
         /* Circuits */
-        .circuit-base-orange { fill: none; stroke: #ff5e3a; stroke-width: 1.5; opacity: 0.16; }
+        .circuit-base-orange { fill: none; stroke: #ff6a3a; stroke-width: 1.5; opacity: 0.28; }
         .circuit-base-cyan   { fill: none; stroke: #00d9ff; stroke-width: 1.5; opacity: 0.16; }
 
         .circuit-light-orange {
@@ -269,9 +269,17 @@ function Hero() {
           <path className="dash-line orange" d="M -50 30 Q 200 -20, 450 40 T 850 10 Q 1050 -10, 1150 50" />
           <path className="dash-line cyan" d="M 550 60 Q 800 10, 1050 70 T 1450 30 Q 1600 10, 1700 70" />
 
-          {/* Pointillés tout en bas */}
-          <path className="dash-line cyan" d="M -50 870 Q 200 820, 450 880 T 850 850 Q 1050 830, 1150 890" />
-          <path className="dash-line orange" d="M 550 900 Q 800 850, 1050 910 T 1450 870 Q 1600 850, 1700 910" />
+          {/* Pointillés en bas, remontés */}
+          <path className="dash-line cyan" d="M -50 750 Q 200 700, 450 760 T 850 730 Q 1050 710, 1150 770" />
+          <path className="dash-line orange" d="M 550 780 Q 800 730, 1050 790 T 1450 750 Q 1600 730, 1700 790" />
+
+          {/* Pointillés à l'intérieur du circuit gauche (orange) */}
+          <path className="dash-line orange" d="M 80 280 Q 200 240, 320 290 T 480 260" />
+          <path className="dash-line cyan"   d="M 50 450 Q 180 410, 300 460 T 460 430" />
+
+          {/* Pointillés à l'intérieur du circuit droit (cyan) */}
+          <path className="dash-line cyan"   d="M 1280 380 Q 1400 340, 1520 390 T 1680 360" />
+          <path className="dash-line orange" d="M 1250 600 Q 1380 560, 1500 610 T 1660 580" />
         </svg>
 
         {/* Carte latérale gauche */}
