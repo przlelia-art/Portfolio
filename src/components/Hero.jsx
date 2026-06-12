@@ -162,22 +162,22 @@ function Hero() {
           position: absolute;
           display: flex;
           align-items: center;
-          gap: 12px;
-          padding: 14px 18px;
+          gap: 14px;
+          padding: 18px 22px;
           background: rgba(255,255,255,0.03);
           border: 1px solid rgba(255,255,255,0.08);
-          border-radius: 12px;
+          border-radius: 14px;
           backdrop-filter: blur(8px);
           z-index: 1;
-          max-width: 200px;
+          max-width: 260px;
         }
         .side-card.left { left: 50px; bottom: 90px; }
         .side-card.right { right: 50px; top: 90px; }
 
         .side-icon {
-          width: 38px; height: 38px; border-radius: 50%; flex-shrink: 0;
+          width: 46px; height: 46px; border-radius: 50%; flex-shrink: 0;
           display: flex; align-items: center; justify-content: center;
-          font-size: 16px; position: relative;
+          font-size: 20px; position: relative;
         }
         .side-icon::before {
           content: "";
@@ -210,7 +210,7 @@ function Hero() {
       <section
         id="hero"
         style={{
-          background: "#0a0a0c",
+          background: "#14141a",
           minHeight: "100vh",
           display: "flex",
           alignItems: "center",
@@ -283,7 +283,7 @@ function Hero() {
           }}
         >
           {/* Photo avec anneau */}
-          <div style={{ position: "relative", width: "150px", height: "150px", marginBottom: "24px" }}>
+          <div style={{ position: "relative", width: "180px", height: "180px", marginBottom: "24px" }}>
             <div className="photo-ring"></div>
             <div style={{
               width: "100%", height: "100%", borderRadius: "50%",
@@ -310,7 +310,7 @@ function Hero() {
             className="hero-name"
             style={{
               fontFamily: "'Space Grotesk', sans-serif",
-              fontSize: "56px", fontWeight: "700", color: "#fff",
+              fontSize: "68px", fontWeight: "700", color: "#fff",
               lineHeight: 1.05, marginBottom: "8px", letterSpacing: "-1px",
             }}
           >
@@ -320,7 +320,7 @@ function Hero() {
           {/* Rôle */}
           <p style={{
             fontFamily: "'Space Grotesk', sans-serif",
-            fontSize: "17px", fontWeight: "500",
+            fontSize: "20px", fontWeight: "500",
             color: "rgba(255,255,255,0.55)", marginBottom: "16px", letterSpacing: "0.5px",
           }}>
             Développeuse Web — toujours en mouvement
@@ -329,7 +329,7 @@ function Hero() {
           {/* Description */}
           <p
             className="hero-desc"
-            style={{ fontSize: "14px", color: "rgba(255,255,255,0.4)", lineHeight: "1.8", maxWidth: "460px", marginBottom: "28px" }}
+            style={{ fontSize: "16px", color: "rgba(255,255,255,0.45)", lineHeight: "1.8", maxWidth: "500px", marginBottom: "28px" }}
           >
             Étudiante en informatique à l'ETNA, passionnée par le développement web.
             Entre Formule 1, MotoGP, course à pied et danse, je transforme cette énergie
