@@ -263,23 +263,18 @@ function Hero() {
 
           {/* Lignes pointillées discrètes */}
           <path className="dash-line orange" d="M -50 480 Q 150 380, 350 460 T 700 420 Q 900 380, 1050 470" />
-          <path className="dash-line cyan" d="M -50 120 Q 250 40, 480 130 T 850 80 Q 1000 60, 1050 140" />
 
-          {/* Pointillés tout en haut */}
-          <path className="dash-line orange" d="M -50 30 Q 200 -20, 450 40 T 850 10 Q 1050 -10, 1150 50" />
-          <path className="dash-line cyan" d="M 550 60 Q 800 10, 1050 70 T 1450 30 Q 1600 10, 1700 70" />
+          {/* Ligne pointillée courbe en haut */}
+          <path className="dash-line cyan" d="M -50 60 Q 400 0, 850 50 T 1700 30" />
 
-          {/* Pointillés en bas, remontés */}
-          <path className="dash-line cyan" d="M -50 750 Q 200 700, 450 760 T 850 730 Q 1050 710, 1150 770" />
-          <path className="dash-line orange" d="M 550 780 Q 800 730, 1050 790 T 1450 750 Q 1600 730, 1700 790" />
+          {/* Ligne pointillée courbe en bas */}
+          <path className="dash-line orange" d="M -50 840 Q 400 900, 850 850 T 1700 870" />
 
-          {/* Pointillés à l'intérieur du circuit gauche (orange) */}
-          <path className="dash-line orange" d="M 80 280 Q 200 240, 320 290 T 480 260" />
-          <path className="dash-line cyan"   d="M 50 450 Q 180 410, 300 460 T 460 430" />
+          {/* Pointillé parallèle au circuit gauche (orange) */}
+          <path className="dash-line orange" d="M -75 625 L 145 625 C 230 625, 255 545, 200 485 C 150 425, 200 345, 295 345 L 460 345 C 530 345, 565 270, 510 215 C 460 160, 355 175, 320 245 C 290 310, 165 300, 140 215 C 115 130, -10 115, -75 185" />
 
-          {/* Pointillés à l'intérieur du circuit droit (cyan) */}
-          <path className="dash-line cyan"   d="M 1280 380 Q 1400 340, 1520 390 T 1680 360" />
-          <path className="dash-line orange" d="M 1250 600 Q 1380 560, 1500 610 T 1660 580" />
+          {/* Pointillé parallèle au circuit droit (cyan) */}
+          <path className="dash-line cyan" d="M 1675 275 L 1455 275 C 1365 275, 1340 360, 1390 420 C 1440 480, 1390 560, 1300 560 L 1150 560 C 1080 560, 1045 625, 1100 680 C 1155 735, 1265 720, 1300 650 C 1335 580, 1450 590, 1480 680 C 1510 770, 1645 790, 1705 720" />
         </svg>
 
         {/* Carte latérale gauche */}
