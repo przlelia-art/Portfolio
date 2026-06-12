@@ -156,6 +156,56 @@ function Hero() {
           .hero-desc  { font-size: 14px !important; }
           .hero-buttons { flex-direction: column; align-items: center; }
         }
+
+        /* Cartes latérales */
+        .side-card {
+          position: absolute;
+          bottom: 90px;
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          padding: 14px 18px;
+          background: rgba(255,255,255,0.03);
+          border: 1px solid rgba(255,255,255,0.08);
+          border-radius: 12px;
+          backdrop-filter: blur(8px);
+          z-index: 1;
+          max-width: 200px;
+        }
+        .side-card.left { left: 50px; }
+        .side-card.right { right: 50px; }
+
+        .side-icon {
+          width: 38px; height: 38px; border-radius: 50%; flex-shrink: 0;
+          display: flex; align-items: center; justify-content: center;
+          font-size: 16px; position: relative;
+        }
+        .side-icon::before {
+          content: "";
+          position: absolute; inset: 0; border-radius: 50%;
+          border: 2px solid transparent;
+        }
+        .side-card.left .side-icon::before { border-top-color: #ff5e3a; border-right-color: #00d9ff; }
+        .side-card.right .side-icon::before { border-top-color: #00d9ff; border-right-color: #ff5e3a; }
+
+        .side-label {
+          font-family: 'Space Grotesk', sans-serif;
+          font-size: 10px; font-weight: 700; letter-spacing: 2px;
+          text-transform: uppercase; color: rgba(255,255,255,0.3);
+          margin-bottom: 2px;
+        }
+        .side-title {
+          font-family: 'Space Grotesk', sans-serif;
+          font-size: 14px; font-weight: 600; color: #fff;
+          margin-bottom: 3px;
+        }
+        .side-sub {
+          font-size: 11px; color: rgba(255,255,255,0.35); line-height: 1.4;
+        }
+
+        @media (max-width: 1100px) {
+          .side-card { display: none; }
+        }
       `}</style>
 
       <section
@@ -198,6 +248,26 @@ function Hero() {
           <path className="circuit-base-cyan" d="M 1700 250 L 1450 250 C 1350 250, 1320 350, 1380 420 C 1440 490, 1380 580, 1280 580 L 1120 580 C 1040 580, 1000 650, 1060 710 C 1120 770, 1240 750, 1280 670 C 1320 590, 1450 600, 1480 700 C 1510 800, 1660 820, 1730 740" />
           <path className="circuit-light-cyan" d="M 1700 250 L 1450 250 C 1350 250, 1320 350, 1380 420 C 1440 490, 1380 580, 1280 580 L 1120 580 C 1040 580, 1000 650, 1060 710 C 1120 770, 1240 750, 1280 670 C 1320 590, 1450 600, 1480 700 C 1510 800, 1660 820, 1730 740" />
         </svg>
+
+        {/* Carte latérale gauche */}
+        <div className="side-card left">
+          <div className="side-icon">🏁</div>
+          <div>
+            <div className="side-label">Télémétrie</div>
+            <div className="side-title">Algorithme & F1</div>
+            <div className="side-sub">Analyse de données et performance vécues à 300 km/h.</div>
+          </div>
+        </div>
+
+        {/* Carte latérale droite */}
+        <div className="side-card right">
+          <div className="side-icon">🧭</div>
+          <div>
+            <div className="side-label">Mouvement</div>
+            <div className="side-title">Trajectoires</div>
+            <div className="side-sub">De la rigueur de la course à pied à la fluidité de la danse.</div>
+          </div>
+        </div>
 
         {/* Contenu */}
         <div
