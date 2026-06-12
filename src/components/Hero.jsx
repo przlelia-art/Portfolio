@@ -264,6 +264,14 @@ function Hero() {
           {/* Lignes pointillées discrètes */}
           <path className="dash-line orange" d="M -50 480 Q 150 380, 350 460 T 700 420 Q 900 380, 1050 470" />
           <path className="dash-line cyan" d="M -50 120 Q 250 40, 480 130 T 850 80 Q 1000 60, 1050 140" />
+
+          {/* Pointillés tout en haut */}
+          <path className="dash-line orange" d="M -50 30 Q 200 -20, 450 40 T 850 10 Q 1050 -10, 1150 50" />
+          <path className="dash-line cyan" d="M 550 60 Q 800 10, 1050 70 T 1450 30 Q 1600 10, 1700 70" />
+
+          {/* Pointillés tout en bas */}
+          <path className="dash-line cyan" d="M -50 870 Q 200 820, 450 880 T 850 850 Q 1050 830, 1150 890" />
+          <path className="dash-line orange" d="M 550 900 Q 800 850, 1050 910 T 1450 870 Q 1600 850, 1700 910" />
         </svg>
 
         {/* Carte latérale gauche */}
@@ -301,7 +309,7 @@ function Hero() {
           }}
         >
           {/* Photo avec anneau */}
-          <div style={{ position: "relative", width: "210px", height: "210px", marginBottom: "24px" }}>
+          <div style={{ position: "relative", width: "240px", height: "240px", marginBottom: "24px" }}>
             <div className="photo-ring"></div>
             <div style={{
               width: "100%", height: "100%", borderRadius: "50%",
