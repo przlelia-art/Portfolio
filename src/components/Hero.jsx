@@ -262,13 +262,12 @@ function Hero() {
           <path className="circuit-light-cyan" d="M 1700 250 L 1450 250 C 1350 250, 1320 350, 1380 420 C 1440 490, 1380 580, 1280 580 L 1120 580 C 1040 580, 1000 650, 1060 710 C 1120 770, 1240 750, 1280 670 C 1320 590, 1450 600, 1480 700 C 1510 800, 1660 820, 1730 740" />
 
           {/* Lignes pointillées discrètes */}
-          <path className="dash-line orange" d="M -50 480 Q 150 380, 350 460 T 700 420 Q 900 380, 1050 470" />
 
           {/* Ligne pointillée courbe en haut */}
-          <path className="dash-line cyan" d="M -50 60 Q 400 0, 850 50 T 1700 30" />
+          <path className="dash-line cyan" d="M -50 150 Q 400 90, 850 140 T 1700 120" />
 
           {/* Ligne pointillée courbe en bas */}
-          <path className="dash-line orange" d="M -50 840 Q 400 900, 850 850 T 1700 870" />
+          <path className="dash-line orange" d="M -50 750 Q 400 810, 850 760 T 1700 780" />
 
           {/* Pointillé parallèle au circuit gauche (orange) */}
           <path className="dash-line orange" d="M -75 625 L 145 625 C 230 625, 255 545, 200 485 C 150 425, 200 345, 295 345 L 460 345 C 530 345, 565 270, 510 215 C 460 160, 355 175, 320 245 C 290 310, 165 300, 140 215 C 115 130, -10 115, -75 185" />
