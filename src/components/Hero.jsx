@@ -27,6 +27,9 @@ function Hero() {
         @keyframes travel {
           to { stroke-dashoffset: -2400; }
         }
+        @keyframes dashFlow {
+          to { stroke-dashoffset: -200; }
+        }
 
         .hero-main-content {
           animation: fadeInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
@@ -151,6 +154,17 @@ function Hero() {
           filter: drop-shadow(0 0 6px rgba(0,217,255,0.8));
         }
 
+        /* Lignes pointillées légères */
+        .dash-line {
+          fill: none;
+          stroke-width: 1;
+          stroke-dasharray: 6 10;
+          opacity: 0.12;
+          animation: dashFlow 8s linear infinite;
+        }
+        .dash-line.orange { stroke: #ff5e3a; }
+        .dash-line.cyan { stroke: #00d9ff; }
+
         @media (max-width: 768px) {
           .hero-name { font-size: 42px !important; }
           .hero-desc  { font-size: 14px !important; }
@@ -210,7 +224,7 @@ function Hero() {
       <section
         id="hero"
         style={{
-          background: "#14141a",
+          background: "#1a1a22",
           minHeight: "100vh",
           display: "flex",
           alignItems: "center",
@@ -246,6 +260,10 @@ function Hero() {
           {/* Circuit droit (cyan) */}
           <path className="circuit-base-cyan" d="M 1700 250 L 1450 250 C 1350 250, 1320 350, 1380 420 C 1440 490, 1380 580, 1280 580 L 1120 580 C 1040 580, 1000 650, 1060 710 C 1120 770, 1240 750, 1280 670 C 1320 590, 1450 600, 1480 700 C 1510 800, 1660 820, 1730 740" />
           <path className="circuit-light-cyan" d="M 1700 250 L 1450 250 C 1350 250, 1320 350, 1380 420 C 1440 490, 1380 580, 1280 580 L 1120 580 C 1040 580, 1000 650, 1060 710 C 1120 770, 1240 750, 1280 670 C 1320 590, 1450 600, 1480 700 C 1510 800, 1660 820, 1730 740" />
+
+          {/* Lignes pointillées discrètes */}
+          <path className="dash-line orange" d="M -50 480 Q 150 380, 350 460 T 700 420 Q 900 380, 1050 470" />
+          <path className="dash-line cyan" d="M -50 120 Q 250 40, 480 130 T 850 80 Q 1000 60, 1050 140" />
         </svg>
 
         {/* Carte latérale gauche */}
@@ -254,7 +272,7 @@ function Hero() {
           <div>
             <div className="side-label">Télémétrie</div>
             <div className="side-title">Algorithme & F1</div>
-            <div className="side-sub">Stratégie de course, logique de dev — même état d'esprit.</div>
+            <div className="side-sub">Stratégie de course, logique de dev - même état d'esprit.</div>
           </div>
         </div>
 
@@ -323,7 +341,7 @@ function Hero() {
             fontSize: "23px", fontWeight: "500",
             color: "rgba(255,255,255,0.55)", marginBottom: "16px", letterSpacing: "0.5px",
           }}>
-            Développeuse Web — toujours en mouvement
+            Développeuse Web - toujours en mouvement
           </p>
 
           {/* Boutons */}
