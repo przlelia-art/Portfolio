@@ -23,7 +23,7 @@ function About() {
         .about-grid {
           display: grid;
           grid-template-columns: 1.1fr 1fr;
-          gap: 50px;
+          gap: 60px;
           margin-top: 48px;
           position: relative;
           z-index: 5;
@@ -36,23 +36,23 @@ function About() {
           }
         }
 
-        /* --- CONFIGURATION TIMELINE RECALCULÉE --- */
+        /* --- TIMELINE DE SÉCURITÉ --- */
         .timeline-container {
           position: relative;
-          padding-left: 45px; /* Plus d'espace pour éloigner complètement le texte */
-          margin-left: 10px;
+          padding-left: 0; 
+          margin-left: 20px;
           display: flex;
           flex-direction: column;
-          gap: 44px;
+          gap: 48px;
         }
 
-        /* La ligne verticale dégradée */
+        /* Ligne verticale avec le dégradé que tu aimes */
         .timeline-container::before {
           content: '';
           position: absolute;
           left: 0;
-          top: 12px;
-          bottom: 12px;
+          top: 8px;
+          bottom: 8px;
           width: 3px;
           background: linear-gradient(to bottom, #ff5e3a, #ff9e3a, #00d9ff, #0077ff);
           border-radius: 4px;
@@ -62,20 +62,22 @@ function About() {
 
         .timeline-item {
           position: relative;
+          display: flex;
+          flex-direction: column;
         }
 
-        /* Ajustement de la position des ronds sur la ligne */
+        /* Ronds ajustés sur l'axe de la ligne */
         .timeline-dot {
           position: absolute;
-          left: -51px; /* Repositionné au pixel près sur la ligne à gauche */
+          left: -6px; 
           top: 4px;
           width: 15px;
           height: 15px;
           border-radius: 50%;
-          background: #0a0a0c; /* Fond identique au Hero */
+          background: #0d0c12; /* Mis à jour avec la nouvelle couleur de fond */
           border: 3px solid #ff5e3a;
           box-shadow: 0 0 12px rgba(255, 94, 58, 0.6);
-          z-index: 2;
+          z-index: 10;
           transition: all 0.3s ease;
         }
         
@@ -84,8 +86,9 @@ function About() {
           box-shadow: 0 0 12px rgba(0, 217, 255, 0.6);
         }
 
-        .timeline-item:hover .timeline-dot {
-          transform: scale(1.2);
+        /* ZONE TAMPON LARGE POUR ÉLOIGNER L'ÉCRITURE */
+        .timeline-content {
+          margin-left: 54px; /* Augmenté pour décoller complètement le texte */
         }
 
         .timeline-tag {
@@ -96,7 +99,6 @@ function About() {
           text-transform: uppercase;
           color: rgba(255, 255, 255, 0.35);
           margin-bottom: 6px;
-          display: block;
         }
 
         .timeline-title {
@@ -127,18 +129,19 @@ function About() {
         }
 
         .passion-card {
-          background: rgba(255, 255, 255, 0.02);
-          border: 1px solid rgba(255, 255, 255, 0.05);
+          background: rgba(255, 255, 255, 0.015);
+          border: 1px solid rgba(255, 255, 255, 0.04);
           border-radius: 16px;
           padding: 24px;
           transition: all 0.3s ease;
           display: flex;
           flex-direction: column;
           gap: 12px;
+          backdrop-filter: blur(4px);
         }
 
         .passion-card:hover {
-          background: rgba(255, 255, 255, 0.04);
+          background: rgba(255, 255, 255, 0.03);
           border-color: rgba(0, 217, 255, 0.2);
           transform: translateY(-4px);
         }
@@ -159,14 +162,25 @@ function About() {
           color: rgba(255, 255, 255, 0.45);
           line-height: 1.5;
         }
+
+        /* --- LIGNES DE FOND --- */
+        .bg-track {
+          position: absolute;
+          width: 140%;
+          height: 100%;
+          top: 0;
+          left: -20%;
+          opacity: 0.15;
+          z-index: 1;
+        }
       `}</style>
 
       <section
         id="about"
         style={{
-          background: "#0a0a0c", /* Fond identique au Hero */
+          background: "#0d0c12", /* Le fond moins noir et identique à ton Hero */
           minHeight: "100vh",
-          padding: "100px 24px",
+          padding: "120px 24px",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
@@ -175,17 +189,31 @@ function About() {
           overflow: "hidden"
         }}
       >
-        {/* Rappel discret de la lueur du Hero */}
+        {/* Halo Orange - Haut Gauche */}
         <div style={{
-          position: "absolute", width: "600px", height: "600px", borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(0,217,255,0.04) 0%, transparent 70%)",
-          bottom: "-10%", left: "-10%", pointerEvents: "none"
+          position: "absolute", width: "700px", height: "700px", borderRadius: "50%",
+          background: "radial-gradient(circle, rgba(255,94,58,0.06) 0%, transparent 70%)",
+          top: "-20%", left: "-15%", pointerEvents: "none"
         }} />
 
-        <div style={{ width: "100%", maxWidth: "1140px", margin: "0 auto" }}>
+        {/* Halo Cyan - Bas Droite */}
+        <div style={{
+          position: "absolute", width: "700px", height: "700px", borderRadius: "50%",
+          background: "radial-gradient(circle, rgba(0,217,255,0.06) 0%, transparent 70%)",
+          bottom: "-20%", right: "-15%", pointerEvents: "none"
+        }} />
+
+        {/* Trajectoires SVG */}
+        <svg className="bg-track" viewBox="0 0 1440 800" fill="none" xmlns="http://www.w3.org/2000/svg" pointerEvents="none">
+          <path d="M-100 200 C 300 400, 800 100, 1600 350" stroke="rgba(255,255,255,0.2)" strokeWidth="1" strokeDasharray="6 6"/>
+          <path d="M-100 450 C 400 200, 900 600, 1600 500" stroke="rgba(255,255,255,0.15)" strokeWidth="1" strokeDasharray="4 8"/>
+        </svg>
+
+        {/* CONTENEUR PRINCIPAL */}
+        <div style={{ width: "100%", maxWidth: "1140px", margin: "0 auto", position: "relative", zIndex: "10" }}>
           
           {/* En-tête */}
-          <div style={{ maxWidth: "680px", marginBottom: "56px" }}>
+          <div style={{ maxWidth: "680px", marginBottom: "64px" }}>
             <h2
               className="about-title"
               style={{
@@ -213,10 +241,9 @@ function About() {
             </p>
           </div>
 
-          {/* Grille principale */}
           <div className="about-grid">
             
-            {/* PARCOURS (Avec marges fixes) */}
+            {/* PARCOURS AVEC TEXTE DÉCALÉ */}
             <div>
               <h3
                 style={{
@@ -224,7 +251,7 @@ function About() {
                   fontSize: "22px",
                   fontWeight: "600",
                   color: "#fff",
-                  marginBottom: "32px"
+                  marginBottom: "36px"
                 }}
               >
                 Mon parcours
@@ -233,38 +260,46 @@ function About() {
               <div className="timeline-container">
                 <div className="timeline-item">
                   <div className="timeline-dot" />
-                  <div className="timeline-tag">Bac Général</div>
-                  <h4 className="timeline-title">Spécialités HLP, SES, HGGSP</h4>
-                  <p className="timeline-desc">
-                    Un profil littéraire et social, loin de l'informatique au départ. Un bagage précieux pour la rédaction, la communication et l'analyse.
-                  </p>
+                  <div className="timeline-content">
+                    <div className="timeline-tag">Bac Général</div>
+                    <h4 className="timeline-title">Spécialités HLP, SES, HGGSP</h4>
+                    <p className="timeline-desc">
+                      Un profil littéraire et social, loin de l'informatique au départ. Un bagage précieux pour la rédaction, la communication et l'analyse.
+                    </p>
+                  </div>
                 </div>
 
                 <div className="timeline-item">
                   <div className="timeline-dot cyan" />
-                  <div className="timeline-tag">Année de droit</div>
-                  <h4 className="timeline-title">Une première orientation</h4>
-                  <p className="timeline-desc">
-                    Une année charnière qui m'a surtout aidée à comprendre ce que je voulais vraiment faire, tout en aiguisant ma rigueur et ma logique.
-                  </p>
+                  <div className="timeline-content">
+                    <div className="timeline-tag">Année de droit</div>
+                    <h4 className="timeline-title">Une première orientation</h4>
+                    <p className="timeline-desc">
+                      Une année charnière qui m'a surtout aidée à comprendre ce que je voulais vraiment faire, tout en aiguisant ma rigueur et ma logique.
+                    </p>
+                  </div>
                 </div>
 
                 <div className="timeline-item">
                   <div className="timeline-dot" />
-                  <div className="timeline-tag">Pivot vers l'IT</div>
-                  <h4 className="timeline-title">Le déclic</h4>
-                  <p className="timeline-desc">
-                    Inspirée par le métier de mon père dans l'IT, je décide de sauter le pas et de me lancer à corps perdu dans l'univers du développement.
-                  </p>
+                  <div className="timeline-content">
+                    <div className="timeline-tag">Pivot vers l'IT</div>
+                    <h4 className="timeline-title">Le déclic</h4>
+                    <p className="timeline-desc">
+                      Inspirée par le métier de mon père dans l'IT, je décide de sauter le pas et de me lancer à corps perdu dans l'univers du développement.
+                    </p>
+                  </div>
                 </div>
 
                 <div className="timeline-item">
                   <div className="timeline-dot cyan" />
-                  <div className="timeline-tag">ETNA — Bachelor Informatique</div>
-                  <h4 className="timeline-title">En route vers l'alternance</h4>
-                  <p className="timeline-desc">
-                    Premiers projets concrets : robotique, web, data — et une alternance trouvée pour lier la théorie à la pratique d'entreprise.
-                  </p>
+                  <div className="timeline-content">
+                    <div className="timeline-tag">ETNA — Bachelor Informatique</div>
+                    <h4 className="timeline-title">En route vers l'alternance</h4>
+                    <p className="timeline-desc">
+                      Premiers projets concrets : robotique, web, data — et une alternance trouvée pour lier la théorie à la pratique d'entreprise.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -277,7 +312,7 @@ function About() {
                   fontSize: "22px",
                   fontWeight: "600",
                   color: "#fff",
-                  marginBottom: "32px"
+                  marginBottom: "36px"
                 }}
               >
                 Mes passions, ma façon de coder
@@ -304,7 +339,7 @@ function About() {
                   <div className="passion-icon">💃</div>
                   <h4 className="passion-title">Danse</h4>
                   <p className="passion-desc">
-                    La rigueur de la chorégraphie et l'attention au moindre détail se retrouvent directement dans le soin que j'apporte à mes interfaces et au CSS.
+                    La rigueur de la chorégraphie et l'attention au moindre detail se retrouvent directement dans le soin que j'apporte à mes interfaces et au CSS.
                   </p>
                 </div>
 
