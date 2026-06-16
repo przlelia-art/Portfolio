@@ -4,7 +4,7 @@ function About() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght=400;500;600;700;800&family=Inter:wght=300;400;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@300;400;500&display=swap');
 
         #about * {
           box-sizing: border-box;
@@ -36,17 +36,17 @@ function About() {
           }
         }
 
-        /* --- TIMELINE DE SÉCURITÉ --- */
+        /* --- TIMELINE --- */
         .timeline-container {
           position: relative;
-          padding-left: 0; 
+          padding-left: 0;
           margin-left: 20px;
           display: flex;
           flex-direction: column;
           gap: 48px;
         }
 
-        /* Ligne verticale avec le dégradé que tu aimes */
+        /* Ligne verticale avec le dégradé */
         .timeline-container::before {
           content: '';
           position: absolute;
@@ -69,26 +69,26 @@ function About() {
         /* Ronds ajustés sur l'axe de la ligne */
         .timeline-dot {
           position: absolute;
-          left: -6px; 
+          left: -6px;
           top: 4px;
           width: 15px;
           height: 15px;
           border-radius: 50%;
-          background: #0d0c12; /* Mis à jour avec la nouvelle couleur de fond */
+          background: #1a1a22;
           border: 3px solid #ff5e3a;
           box-shadow: 0 0 12px rgba(255, 94, 58, 0.6);
           z-index: 10;
           transition: all 0.3s ease;
         }
-        
+
         .timeline-dot.cyan {
           border-color: #00d9ff;
           box-shadow: 0 0 12px rgba(0, 217, 255, 0.6);
         }
 
-        /* ZONE TAMPON LARGE POUR ÉLOIGNER L'ÉCRITURE */
+        /* ZONE TAMPON POUR ÉLOIGNER L'ÉCRITURE DE LA LIGNE */
         .timeline-content {
-          margin-left: 54px; /* Augmenté pour décoller complètement le texte */
+          margin-left: 100px;
         }
 
         .timeline-tag {
@@ -178,7 +178,7 @@ function About() {
       <section
         id="about"
         style={{
-          background: "#0d0c12", /* Le fond moins noir et identique à ton Hero */
+          background: "#1a1a22",
           minHeight: "100vh",
           padding: "120px 24px",
           display: "flex",
@@ -210,8 +210,8 @@ function About() {
         </svg>
 
         {/* CONTENEUR PRINCIPAL */}
-        <div style={{ width: "100%", maxWidth: "1140px", margin: "0 auto", position: "relative", zIndex: "10" }}>
-          
+        <div style={{ width: "100%", maxWidth: "1140px", margin: "0 auto", position: "relative", zIndex: 10 }}>
+
           {/* En-tête */}
           <div style={{ maxWidth: "680px", marginBottom: "64px" }}>
             <h2
@@ -234,16 +234,16 @@ function About() {
                 lineHeight: "1.8"
               }}
             >
-              Étudiante en informatique à l'ETNA, je suis passionnée par le développement web. 
-              Entre Formule 1, MotoGP, course à pied et danse, je transforme cette énergie en projets 
-              concrets et j'explore sans cesse de nouvelles technologies. Mon parcours n'a pas 
+              Étudiante en informatique à l'ETNA, je suis passionnée par le développement web.
+              Entre Formule 1, MotoGP, course à pied et danse, je transforme cette énergie en projets
+              concrets et j'explore sans cesse de nouvelles technologies. Mon parcours n'a pas
               toujours été tout droit — et c'est peut-être ça qui me rend curieuse.
             </p>
           </div>
 
           <div className="about-grid">
-            
-            {/* PARCOURS AVEC TEXTE DÉCALÉ */}
+
+            {/* PARCOURS */}
             <div>
               <h3
                 style={{
