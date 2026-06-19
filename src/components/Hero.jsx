@@ -351,7 +351,7 @@ function Hero() {
             fontSize: "23px", fontWeight: "500",
             color: "rgba(255,255,255,0.55)", marginBottom: "16px", letterSpacing: "0.5px",
           }}>
-            Développeuse Web - toujours en mouvement
+            Développeuse Full Stack - toujours en mouvement
           </p>
 
           {/* Boutons */}
