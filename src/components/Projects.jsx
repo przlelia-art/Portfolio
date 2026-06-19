@@ -25,7 +25,7 @@ const projects = [
     description:
       "Robot quadrupède à 8 servos MG90S programmé en C avec ESP-IDF sur ESP32-S2. Capable de tenir debout et d'exécuter une séquence de danse synchronisée.",
     technologies: ["C", "ESP-IDF", "ESP32-S2"],
-    githubLink: "https://github.com/przlelia-art",
+    githubLink: "https://github.com/przlelia-art/Spider_bot",
     visual: "spider",
   },
   {
@@ -34,7 +34,7 @@ const projects = [
     description:
       "Application mobile hybride de mode : dressing connecté, marketplace sans commission et réseau social. Construite avec React Native et Expo.",
     technologies: ["React Native", "Expo", "JWT"],
-    githubLink: "https://github.com/przlelia-art",
+    githubLink: "https://github.com/przlelia-art/FashionFolio",
     visual: "fashion",
   },
   {
@@ -43,7 +43,7 @@ const projects = [
     description:
       "API REST avec recommandations de tenues par IA. Le LLM Google Gemini génère des suggestions cohérentes depuis le dressing de l'utilisateur.",
     technologies: ["FastAPI", "SQLite", "Google Gemini"],
-    githubLink: "https://github.com/przlelia-art",
+    githubLink: "https://github.com/przlelia-art/FashionFolio",
     visual: "db",
   },
   {
@@ -52,7 +52,7 @@ const projects = [
     description:
       "Robot autonome avec évitement d'obstacles (Arduino Uno, L298N, HC-SR04). Progressive speed reduction et bonus servo-scan ajoutés.",
     technologies: ["Arduino", "HC-SR04", "L298N"],
-    githubLink: "https://github.com/przlelia-art",
+    githubLink: "https://github.com/przlelia-art/Robot_car",
     visual: "car",
   },
 ];
