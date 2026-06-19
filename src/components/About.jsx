@@ -50,7 +50,7 @@ function About() {
         .timeline-container::before {
           content: '';
           position: absolute;
-          left: 0;
+          left: -20px;
           top: 8px;
           bottom: 8px;
           width: 3px;
@@ -69,7 +69,7 @@ function About() {
         /* Ronds ajustés sur l'axe de la ligne */
         .timeline-dot {
           position: absolute;
-          left: -6px;
+          left: -25px;
           top: 4px;
           width: 15px;
           height: 15px;
@@ -84,6 +84,25 @@ function About() {
         .timeline-dot.cyan {
           border-color: #00d9ff;
           box-shadow: 0 0 12px rgba(0, 217, 255, 0.6);
+        }
+
+        /* Anneau de pulse autour des points */
+        .timeline-dot::after {
+          content: '';
+          position: absolute;
+          inset: -3px;
+          border-radius: 50%;
+          border: 2px solid #ff5e3a;
+          animation: pulseRing 2.4s ease-out infinite;
+        }
+
+        .timeline-dot.cyan::after {
+          border-color: #00d9ff;
+        }
+
+        @keyframes pulseRing {
+          0% { transform: scale(1); opacity: 0.7; }
+          100% { transform: scale(2.4); opacity: 0; }
         }
 
         /* ZONE TAMPON POUR ÉLOIGNER L'ÉCRITURE DE LA LIGNE */
@@ -141,9 +160,10 @@ function About() {
         }
 
         .passion-card:hover {
-          background: rgba(255, 255, 255, 0.03);
-          border-color: rgba(0, 217, 255, 0.2);
-          transform: translateY(-4px);
+          background: rgba(255, 255, 255, 0.05);
+          border-color: rgba(0, 217, 255, 0.3);
+          transform: translateY(-6px);
+          box-shadow: 0 14px 30px rgba(0,0,0,0.3);
         }
 
         .passion-icon {
