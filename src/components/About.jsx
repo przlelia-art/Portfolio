@@ -257,7 +257,7 @@ function About() {
               Étudiante en informatique à l'ETNA, je suis passionnée par le développement web.
               Entre Formule 1, MotoGP, course à pied et danse, je transforme cette énergie en projets
               concrets et j'explore sans cesse de nouvelles technologies. Mon parcours n'a pas
-              toujours été tout droit — et c'est peut-être ça qui me rend curieuse.
+              toujours été tout droit - et c'est peut-être ça qui me rend curieuse.
             </p>
           </div>
 
@@ -317,7 +317,7 @@ function About() {
                     <div className="timeline-tag">ETNA — Bachelor Informatique</div>
                     <h4 className="timeline-title">En route vers l'alternance</h4>
                     <p className="timeline-desc">
-                      Premiers projets concrets : robotique, web, data — et une alternance trouvée pour lier la théorie à la pratique d'entreprise.
+                      Premiers projets concrets : robotique, web, data - et une alternance trouvée pour lier la théorie à la pratique d'entreprise.
                     </p>
                   </div>
                 </div>
@@ -343,7 +343,7 @@ function About() {
                   <div className="passion-icon">🏁</div>
                   <h4 className="passion-title">F1 & MotoGP</h4>
                   <p className="passion-desc">
-                    La stratégie de course m'a appris à analyser, anticiper et optimiser — exactement ce que je fais en debug ou en traitement de données.
+                    La stratégie de course m'a appris à analyser, anticiper et optimiser - exactement ce que je fais en debug ou en traitement de données.
                   </p>
                 </div>
 
@@ -367,7 +367,7 @@ function About() {
                   <div className="passion-icon">✈️</div>
                   <h4 className="passion-title">Voyages</h4>
                   <p className="passion-desc">
-                    S'adapter en permanence à de nouveaux environnements — c'est un peu comme apprendre une nouvelle techno ou apprivoiser un framework.
+                    S'adapter en permanence à de nouveaux environnements - c'est un peu comme apprendre une nouvelle techno ou apprivoiser un framework.
                   </p>
                 </div>
               </div>
