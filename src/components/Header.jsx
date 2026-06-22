@@ -26,6 +26,7 @@ function Header() {
     { id: "hero",     label: "Accueil" },
     { id: "about",    label: "À propos" },
     { id: "projects", label: "Projets" },
+    { id: "personal-projects", label: "Projets perso"},
     { id: "skills",   label: "Compétences" },
     { id: "contact",  label: "Contact" },
   ];
