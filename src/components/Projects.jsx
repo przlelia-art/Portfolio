@@ -30,7 +30,7 @@ const projects = [
   },
   {
     id: 4,
-    title: "FashionFolio — Frontend",
+    title: "FashionFolio - Frontend",
     description:
       "Application mobile hybride de mode : dressing connecté, marketplace sans commission et réseau social. Construite avec React Native et Expo.",
     technologies: ["React Native", "Expo", "JWT"],
@@ -39,7 +39,7 @@ const projects = [
   },
   {
     id: 5,
-    title: "FashionFolio — Backend",
+    title: "FashionFolio - Backend",
     description:
       "API REST avec recommandations de tenues par IA. Le LLM Google Gemini génère des suggestions cohérentes depuis le dressing de l'utilisateur.",
     technologies: ["FastAPI", "SQLite", "Google Gemini"],
