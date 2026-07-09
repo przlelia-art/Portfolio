@@ -83,7 +83,7 @@ function Footer() {
               LinkedIn
             </a>
             <div className="footer-divider" />
-            <a href="mailto:przlelia@gmail.com" className="footer-link">
+            <a href="mailto:perez_l@etna-alternance.net" className="footer-link">
               Email
             </a>
           </div>
