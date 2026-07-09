@@ -74,7 +74,7 @@ const upcomingProjects = [
     {
         id: 1,
         theme: "Course à pied",
-        desc: "Un projet autour de la course — suivi, analyse de performances, planification d'entraînements. La forme exacte reste à définir.",
+        desc: "Un projet autour de la course - suivi, analyse de performances, planification d'entraînements. La forme exacte reste à définir.",
         ideas: ["Data", "Mobile", "Running"],
         visual: "running",
         glow: "rgba(255,94,58,0.12)",
@@ -82,7 +82,7 @@ const upcomingProjects = [
     {
         id: 2,
         theme: "Danse",
-        desc: "Un projet qui mêle tech et danse — peut-être une app de chorégraphies, un outil de planning ou quelque chose de plus créatif et visuel.",
+        desc: "Un projet qui mêle tech et danse - peut-être une app de chorégraphies, un outil de planning ou quelque chose de plus créatif et visuel.",
         ideas: ["Créatif", "Web", "Animation"],
         visual: "danse",
         glow: "rgba(0,217,255,0.1)",
@@ -90,7 +90,7 @@ const upcomingProjects = [
     {
         id: 3,
         theme: "MotoGP",
-        desc: "Dans la lignée du projet F1, un projet d'analyse de données MotoGP — stratégies de course, comparaisons de pilotes, télémétrie.",
+        desc: "Dans la lignée du projet F1, un projet d'analyse de données MotoGP - stratégies de course, comparaisons de pilotes, télémétrie.",
         ideas: ["Data", "Python", "Analyse"],
         visual: "motogp",
         glow: "rgba(255,189,68,0.08)",
@@ -300,7 +300,7 @@ function UpcomingProjects() {
                             }}
                         >
                             Des thèmes qui me tiennent à cœur, des idées qui mijotent. Les projets n'ont pas encore de
-                            forme précise — mais l'envie, elle, est bien là.
+                            forme précise - mais l'envie, elle, est bien là.
                         </p>
                     </div>
 
