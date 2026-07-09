@@ -45,7 +45,7 @@ function Skills() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Inter:wght@300;400;500&display=swap');
 
         #skills * {
           box-sizing: border-box;
@@ -56,13 +56,13 @@ function Skills() {
           background: rgba(255,255,255,0.03);
           border: 1px solid rgba(255,255,255,0.08);
           border-radius: 14px;
-          padding: 36px;
+          padding: 32px;
           transition: all 0.3s ease;
         }
 
         .skill-card:hover {
           background: rgba(255,255,255,0.05);
-          border-color: rgba(139,92,246,0.3);
+          border-color: rgba(255,94,58,0.3);
           transform: translateY(-6px);
           box-shadow: 0 20px 40px rgba(0,0,0,0.3);
         }
@@ -80,9 +80,9 @@ function Skills() {
         }
 
         .skill-card:hover .skill-badge {
-          border-color: rgba(139,92,246,0.25);
-          background: rgba(139,92,246,0.08);
-          color: #c4b5fd;
+          border-color: rgba(255,94,58,0.25);
+          background: rgba(255,94,58,0.08);
+          color: #ff8a65;
         }
 
         @media (max-width: 900px) {
@@ -97,35 +97,57 @@ function Skills() {
       <section
         id="skills"
         style={{
-          background: "#0d0d0f",
+          background: "#1a1a22",
           minHeight: "100vh",
           padding: "100px 60px",
           position: "relative",
           overflow: "hidden",
         }}
       >
-        {/* Halo */}
+        {/* Halos */}
         <div style={{
           position: "absolute", width: "500px", height: "500px", borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(139,92,246,0.07) 0%, transparent 70%)",
-          top: "50%", right: "-100px", transform: "translateY(-50%)",
-          pointerEvents: "none",
+          background: "radial-gradient(circle, rgba(255,94,58,0.08) 0%, transparent 70%)",
+          top: "-100px", left: "-100px", pointerEvents: "none",
+        }} />
+        <div style={{
+          position: "absolute", width: "500px", height: "500px", borderRadius: "50%",
+          background: "radial-gradient(circle, rgba(0,217,255,0.08) 0%, transparent 70%)",
+          bottom: "-100px", right: "-100px", pointerEvents: "none",
         }} />
 
         <div style={{ maxWidth: "1100px", margin: "0 auto", position: "relative", zIndex: 1 }}>
 
           {/* Titre */}
           <div style={{ textAlign: "center", marginBottom: "60px" }}>
-            <p style={{ fontSize: "11px", color: "rgba(255,255,255,0.2)", letterSpacing: "2px", textTransform: "uppercase", marginBottom: "12px" }}>
+            <p style={{
+              fontFamily: "'Space Grotesk', sans-serif",
+              fontSize: "11px", color: "rgba(255,255,255,0.2)",
+              letterSpacing: "2px", textTransform: "uppercase", marginBottom: "12px",
+            }}>
               Mon arsenal
             </p>
             <h2
               className="skills-title"
-              style={{ fontSize: "42px", fontWeight: "700", color: "#ffffff", marginBottom: "14px", letterSpacing: "-0.5px" }}
+              style={{
+                fontFamily: "'Space Grotesk', sans-serif",
+                fontSize: "42px", fontWeight: "700", marginBottom: "14px", letterSpacing: "-0.5px",
+              }}
             >
-              Mes Compétences
+              <span style={{ color: "#ffffff" }}>Mes </span>
+              <span style={{
+                background: "linear-gradient(90deg, #ff5e3a, #00d9ff)",
+                WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+              }}>
+                Compétences
+              </span>
             </h2>
-            <p style={{ fontSize: "15px", color: "rgba(255,255,255,0.4)", maxWidth: "460px", margin: "0 auto", lineHeight: "1.7" }}>
+            <p style={{
+              fontFamily: "'Inter', sans-serif",
+              fontSize: "15px", color: "rgba(255,255,255,0.4)",
+              maxWidth: "460px", margin: "0 auto", lineHeight: "1.7",
+            }}>
               Technologies et outils que j'utilise au quotidien dans mes projets.
             </p>
           </div>
@@ -148,8 +170,15 @@ function Skills() {
               >
                 {/* En-tête carte */}
                 <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "20px" }}>
-                  <img src={cat.icon} alt={cat.category} style={{ width: "26px", height: "26px", objectFit: "contain", opacity: 0.8 }} />
-                  <h3 style={{ fontSize: "17px", fontWeight: "600", color: "rgba(255,255,255,0.9)" }}>
+                  <img
+                    src={cat.icon}
+                    alt={cat.category}
+                    style={{ width: "26px", height: "26px", objectFit: "contain", opacity: 0.8 }}
+                  />
+                  <h3 style={{
+                    fontFamily: "'Space Grotesk', sans-serif",
+                    fontSize: "17px", fontWeight: "600", color: "rgba(255,255,255,0.9)",
+                  }}>
                     {cat.category}
                   </h3>
                 </div>
