@@ -23,13 +23,13 @@ function Header() {
   }, []);
 
   const navItems = [
-    { id: "hero",     label: "Accueil" },
-    { id: "about",    label: "À propos" },
-    { id: "projects", label: "Projets" },
-    { id: "personal-projects", label: "Projets perso"},
-    { id: "skills",   label: "Compétences" },
+    { id: "hero",              label: "Accueil" },
+    { id: "about",             label: "À propos" },
+    { id: "projects",          label: "Projets" },
+    { id: "personal-projects", label: "Projets perso" },
+    { id: "skills",            label: "Compétences" },
     { id: "upcoming-projects", label: "Projets à venir" },
-    { id: "contact",  label: "Contact" },
+    { id: "contact",           label: "Contact" },
   ];
 
   const scrollToSection = (sectionId) => {
@@ -44,7 +44,7 @@ function Header() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
 
         .header-root * {
           box-sizing: border-box;
@@ -52,14 +52,15 @@ function Header() {
         }
 
         .nav-link-item {
-          color: rgba(255,255,255,0.55);
+          color: rgba(255,255,255,0.5);
           text-decoration: none;
-          font-size: 14px;
+          font-size: 13px;
           font-weight: 500;
-          padding: 6px 14px;
+          padding: 6px 12px;
           border-radius: 6px;
           transition: all 0.2s ease;
           letter-spacing: 0.2px;
+          white-space: nowrap;
         }
 
         .nav-link-item:hover {
@@ -68,9 +69,9 @@ function Header() {
         }
 
         .nav-link-item.active {
-          color: white;
-          background: rgba(139,92,246,0.2);
-          border: 1px solid rgba(139,92,246,0.3);
+          color: #ff8a65;
+          background: rgba(255,94,58,0.12);
+          border: 1px solid rgba(255,94,58,0.25);
         }
 
         .hamburger-btn {
@@ -97,7 +98,7 @@ function Header() {
           top: 0; right: 0;
           width: 260px;
           height: 100vh;
-          background: rgba(13,13,15,0.98);
+          background: rgba(26,26,34,0.98);
           backdrop-filter: blur(20px);
           border-left: 1px solid rgba(255,255,255,0.08);
           display: flex;
@@ -138,7 +139,7 @@ function Header() {
             <a
               href={`#${item.id}`}
               className={`nav-link-item${activeSection === item.id ? " active" : ""}`}
-              style={{ display: "block", fontSize: "16px" }}
+              style={{ display: "block", fontSize: "15px" }}
               onClick={(e) => { e.preventDefault(); scrollToSection(item.id); }}
             >
               {item.label}
@@ -158,14 +159,14 @@ function Header() {
           display: "flex",
           alignItems: "center",
           transition: "all 0.3s ease",
-          background: scrolled ? "rgba(13,13,15,0.85)" : "transparent",
+          background: scrolled ? "rgba(26,26,34,0.9)" : "transparent",
           backdropFilter: scrolled ? "blur(16px)" : "none",
           borderBottom: scrolled ? "1px solid rgba(255,255,255,0.06)" : "none",
         }}
       >
         <nav style={{
           width: "100%",
-          maxWidth: "1200px",
+          maxWidth: "1400px",
           margin: "0 auto",
           display: "flex",
           justifyContent: "space-between",
@@ -175,11 +176,16 @@ function Header() {
           <a
             href="#hero"
             style={{
+              fontFamily: "'Space Grotesk', sans-serif",
               fontSize: "15px",
-              fontWeight: "600",
+              fontWeight: "700",
               color: "white",
               textDecoration: "none",
-              letterSpacing: "0.2px",
+              letterSpacing: "0.3px",
+              background: "linear-gradient(90deg, #ff5e3a, #00d9ff)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
             }}
             onClick={(e) => { e.preventDefault(); scrollToSection("hero"); }}
           >
@@ -198,7 +204,7 @@ function Header() {
           </button>
 
           {/* Liens desktop */}
-          <ul className="nav-links-desktop" style={{ display: "flex", gap: "4px", listStyle: "none", margin: 0, padding: 0 }}>
+          <ul className="nav-links-desktop" style={{ display: "flex", gap: "2px", listStyle: "none", margin: 0, padding: 0 }}>
             {navItems.map((item) => (
               <li key={item.id}>
                 <a
