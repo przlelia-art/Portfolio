@@ -5,7 +5,7 @@ const skillsData = [
     id: 1,
     category: "Langages",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-    skills: ["JavaScript", "Python", "C", "HTML/CSS", "Go", "Java", "Bash"],
+    skills: ["JavaScript", "Python", "C/C++", "HTML/CSS", "Go", "Cobol", "Bash"],
   },
   {
     id: 2,
